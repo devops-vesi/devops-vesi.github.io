@@ -1,0 +1,37 @@
+baseURL = 'DevTeam'
+languageCode = 'en-us'
+title = 'VESI DevOps Team'
+theme = 'SimpleIntro'
+
+[menus]
+    [[menu.main]]
+        identifier = "test"
+        name = "About us"
+        weight = "10"
+        url = "#about"
+    [[menu.main]]
+        identifier = "landscape"
+        name = "Landscape"
+        weight = "20"
+        url = "#landscape"
+    [[menu.main]]
+        identifier = "team"
+        name = "Team"
+        weight = "30"
+        url = "#team"
+    [[menu.main]]
+        identifier = "contact"
+        name = "Contact"
+        weight = "40"
+        url = "#contact"
+
+[params]
+    maintext = "Think it, Build it !"
+    name = "DevOps Team"
+    urlFooterImg = "/img/logodev.svg"
+    Adress = "8 avenue du Stade de France, 93200 Saint-Denis"
+    Company = "Vinci Energies Systèmes d'Information"
+    favicon = "/img/favicon.ico"
+
+    mailAdress = "exemple@gmail.com"
+    defaultContentLanguage = 'en'

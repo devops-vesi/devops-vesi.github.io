@@ -1,0 +1,159 @@
+[[activities]]
+    title = "SAP Deployments"
+    image = "/img/team/activities/deployment.png"
+    text = """
+        Our Team works to execute the SAP Deployment in new Vinci Energies companies.
+    """
+
+[[activities]]
+    title = "Enhancements"
+    image = "/img/team/activities/enhancement.png"
+    text = """
+        Core model enhancements and maintenance.
+    """
+
+[[activities]]
+    title = "Upgrades"
+    image = "/img/team/activities/upgrade.png"
+    text = """
+        SAP Landscape upgrades every 2 to 3 years.
+    """
+
+[[activities]]
+    title = "Projects"
+    image = "/img/team/activities/project.png"
+    text = """
+        Various projects related to the SAP domain.
+    """
+
+[[activities]]
+    title = "Quality & Security"
+    image = "/img/team/activities/iso.png"
+    text = """
+        Compliance with the ISO 27001 standard and involvement in several topics related to the quality of the code.
+    """
+
+[[activities]]
+    title = "Exploration"
+    image = "/img/team/activities/exploration.png"
+    text = """
+        Various explorations of new technologies and innovations.
+    """
+
+
+[[members]]
+    icon = "/img/team/members/walid.jpeg"
+
+[[members]]
+    icon = "/img/team/members/nizard.jpeg"
+
+[[members]]
+    icon = "/img/team/members/nicolas.jpeg"
+
+[[members]]
+    icon = "/img/team/members/haifan.png"
+
+[[members]]
+    icon = "/img/team/members/nizare.png"
+
+[[members]]
+    icon = "/img/team/members/amin.jpeg"
+
+[[members]]
+    icon = "/img/team/members/ali.jpg"
+
+[[members]]
+    icon = "/img/team/members/zouhour.png"
+
+[[members]]
+    icon = "/img/team/members/walid.jpeg"
+
+[[members]]
+    icon = "/img/team/members/nizard.jpeg"
+
+[[members]]
+    icon = "/img/team/members/nicolas.jpeg"
+
+[[members]]
+    icon = "/img/team/members/haifan.png"
+
+[[members]]
+    icon = "/img/team/members/nizare.png"
+
+[[members]]
+    icon = "/img/team/members/amin.jpeg"
+
+[[members]]
+    icon = "/img/team/members/ali.jpg"
+
+[[members]]
+    icon = "/img/team/members/zouhour.png"
+
+[[members]]
+    icon = "/img/team/members/walid.jpeg"
+
+[[members]]
+    icon = "/img/team/members/nizard.jpeg"
+
+[[members]]
+    icon = "/img/team/members/nicolas.jpeg"
+
+[[members]]
+    icon = "/img/team/members/haifan.png"
+
+[[members]]
+    icon = "/img/team/members/nizare.png"
+
+[[members]]
+    icon = "/img/team/members/amin.jpeg"
+
+[[members]]
+    icon = "/img/team/members/ali.jpg"
+
+[[members]]
+    icon = "/img/team/members/zouhour.png"
+
+
+[[values]]
+    image = "/img/team/values/commitment.png"
+    text = "Commitment & Result focused"
+
+[[values]]
+    image = "/img/team/values/elearning.png"
+    text = "Ambition & Initiatives"
+
+[[values]]
+    image = "/img/team/values/sharing.png"
+    text = "Innovation & Sharing"
+
+[[values]]
+    image = "/img/team/values/trust.png"
+    text = "Autonomy & Trust"
+
+[[values]]
+    image = "/img/team/values/disabilities.png"
+    text = "Involved in disabilities issues"
+
+[[values]]
+    image = "/img/team/values/team.png"
+    text = "Team working"
+
+[[certification]]
+    image = "/img/team/certifications/sap.png"
+    title = "SAP Certifications"
+    text = "Multiple technical SAP certifications in the team : more than 50% of team members are SAP certified."
+
+[[certification]]
+    image = "/img/team/certifications/iso.png"
+    title = "ISO 27001"
+    text = "ISO 27001 is an international standard for information systems security. Security is a top priority for our team, and we ensure that our development process is secure."
+
+[[certification]]
+    image = "/img/team/certifications/clean-code.png"
+    title = "Technical Excellence Coaching"
+    text = "Coaching by SAP Champion followed by some members of the team to introduce the concept of Technical Excellence in our work perimeter."
+
+[[certification]]
+    image = "/img/team/certifications/SIT-label-level2.png"
+    title = "Sustainable IT - Level 2"
+    text = "This label validates our commitment to a more responsible use of digital technology, and our respect for accessibility standards."

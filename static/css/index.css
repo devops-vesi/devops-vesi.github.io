@@ -1,0 +1,499 @@
+/* Carousel d'entrée dans le site */
+.centerAll {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#mainBG {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffffff;
+}
+@media screen and (max-width: 650px) {
+  .main-image {
+    width: 80%;
+  }
+}
+
+/* Titre des sections */
+.title-deco {
+  position: relative;
+}
+.title-deco::after {
+  position: absolute;
+  content: "";
+  width: 42px;
+  height: 4px;
+  background: #1f293a;
+  left: 0;
+  bottom: 0px;
+}
+
+/*section SAP Landscapes*/
+/*css tab*/  
+.tab {
+display: none;
+padding: 20px 0 0;
+border-top: 1px solid #ddd;
+align-items: center;
+}
+input {
+display: none;
+}
+label {
+display: inline-block;
+margin: 0 0 -1px;
+padding: 15px 25px;
+font-weight: 600;
+text-align: center;
+color: #bbb;
+border: 1px solid transparent;
+}
+label:before {
+font-weight: normal;
+margin-right: 10px;
+}
+label:hover {
+color: #888;
+cursor: pointer;
+}
+input:checked + label {
+color: #555;
+border: 1px solid #ddd;
+border-top: 2px solid #5532fa;
+border-bottom: 1px solid #fff;
+}
+#tab1:checked ~ #front,
+#tab2:checked ~ #back
+{
+display: block;
+}
+@media screen and (max-width: 650px) {
+label {
+  font-size: 0;
+}
+
+label:before {
+  margin: 0;
+  font-size: 18px;
+}
+
+.technos {
+  transform: scale(1.25);
+}
+}
+@media screen and (max-width: 400px) {
+label {
+  padding: 15px;
+}
+}
+
+@media screen and (max-width: 500px) {
+.technos {
+  transform: scale(1.5);
+}
+}
+
+@media screen and (max-width: 1023px) {
+  .numbers-icons {
+    margin-top: 40px;
+  }
+}
+
+/* section team members */
+/*Glissière image*/
+
+
+@keyframes scroll {
+0% {
+  transform: translateX(0);
+}
+
+100% {
+  transform: translateX(calc(-250px * 7));
+}
+}
+
+.members {
+height: 120px;
+margin: auto;
+overflow: hidden;
+position: relative;
+}
+
+.members::before, .members::after {
+background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);
+content: "";
+height: 100px;
+position: absolute;
+width: 1px;
+z-index: 1;
+}
+
+.members::after {
+right: 0;
+top: 0;
+transform: rotateZ(180deg);
+}
+
+.members::before {
+left: 0;
+top: 0;
+}
+
+.members .sliders {
+animation: scroll 8s linear infinite;
+display: flex;
+width: calc(250px * 14);
+overflow: hidden;
+}
+
+.members .slide {
+  height: 150px;
+  width: 150px;
+  }
+
+.members .slide img{
+  height: 80%;
+  width: 100%;
+  clip-path:ellipse(45% 50%);
+}
+
+@media (max-width: 540px) {
+  .members {
+    height: 100px;
+  }
+
+  .members .slide img{
+    height: 80%;
+    width: 100%;
+    clip-path:ellipse(45% 50%);
+  }
+}
+
+/* Section team values*/
+
+/* slider */
+
+.value {
+position: relative;
+overflow: hidden;
+}
+
+.value .slider2 {
+height: 100%;
+white-space: nowrap;
+font-size: 0;
+transition: 0.8s;
+}
+
+.value .slider2 > * {
+font-size: 1rem;
+display: inline-block;
+white-space: normal;
+height: 100%;
+width: 100%;
+background: none 50% no-repeat;
+margin-bottom: 5%;
+}
+
+.value .prevNext {
+position: absolute;
+z-index: 1;
+top: 40%;
+width: 100%;
+height: 0;
+}
+
+.value .prevNext > div+div {
+visibility: hidden; 
+}
+
+.value .prevNext a {
+background: transparent;
+position: absolute;
+width: 50px;
+height: 50px;
+-webkit-transition: 0.3s;
+        transition: 0.3s;
+-webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+left: 0;
+}
+
+.value .prevNext a:hover {
+opacity: 1;
+}
+
+.value .prevNext a+a {
+left: auto;
+right: 0;
+}
+
+
+.value >s:target ~ .prevNext >* { visibility: hidden;}
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible}
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+
+#s1:target ~ .slider {transform: translateX(0%); -webkit-transform: translateX(0%);}
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+
+.value {
+color: black;	
+text-align: center;
+}
+
+.value a {
+margin: 0 10px;
+color: rgba(0,0,0,0.8);
+}
+
+.arrow-left {
+border-right: 25px solid rgb(255, 255, 255);
+border-left: 25px solid transparent;
+border-top: 25px solid transparent;
+border-bottom: 25px solid transparent;
+}
+
+.arrow-right {
+border-left: 25px solid rgb(255, 255, 255);
+border-right: 25px solid transparent;
+border-top: 25px solid transparent;
+border-bottom: 25px solid transparent;
+}
+
+@media screen and (max-width: 650px) {
+.desc {
+  margin-left: -8%;
+}
+}
+
+@media screen and (max-width: 300px) {
+.desc {
+  margin-left: -16%;
+}
+}
+
+.values-logo {
+  width: 80px;
+}
+
+@media screen and (max-width: 650px) {
+  .values-logo {
+    width: 60px;
+  }
+}
+
+.hover-btn{
+  all: unset;
+  cursor: pointer;
+  margin-left: 60px;
+  border:2px solid white;
+  color: white;
+  padding: 5px; border-radius: 10%;
+  width: 60px;
+  text-align: center;
+}
+
+.hover-btn:hover {
+  color: #1f293a;
+  background-color: white;
+}
+
+@media screen and (max-width: 668px) {
+  .title-move {
+    margin-left: 10px;
+  }
+}
+
+.container23 {
+  display:grid;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#TEST {
+  width: 200px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  margin: 1.5em;
+  padding: 1em;
+  background-color: #1f293a;
+  position: relative;
+  color: white;
+  border-radius: 5px;
+  justify-content: center;
+  border: 3px solid #1f293a;
+}
+
+/* #TEST:hover {
+  background-color: white;
+  color: #1f293a;
+  border: 3px solid #1f293a;
+  font-weight: bolder;
+} */
+
+.sliderContainer {
+  overflow: hidden;
+  width: inherit;
+  height: 200px;
+}
+
+.send_button {
+  background-color: #1f293a;
+  border-style: groove;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-110.84px * 12));
+  }
+}
+
+.slider {
+  background: white;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  width: inherit;
+  display: flex;
+}
+
+.slider-position {
+  margin-top: 3rem;
+  margin-left: 3rem;
+}
+
+@media screen and (max-width: 1023px) {
+  .slider-position{
+    margin-top: 5rem;
+    margin-left: 0;
+  }
+}
+
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, rgb(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  content: "";
+  height: 150px;
+  position: absolute;
+  width: 50px;
+  z-index: 2;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider .slide-track {
+  -webkit-animation: scroll 20s linear infinite;
+  animation: scroll 20s linear infinite;
+  display: flex;
+}
+
+.slider .slide {
+  height: 150px;
+  width: 106px;
+  margin-left: 5px;
+}
+
+.avatar {
+  border-radius: 10%;
+  height: 150px;
+}
+
+@media screen and (max-width: 1023px) {
+  .responsive_div{
+    display: none;
+  }
+}
+
+.list-responsive {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 767.99px) {
+  .list-responsive{
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .numbers-width-responsive{
+    width: 30%;
+  }
+}
+
+
+
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 200px; /* Set a default minimum width */
+  margin-left: -97px; /* Divide value of min-width by 2 */
+  background-color: #1f293a; /* Black background color */
+  color: white; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 5%; /* Rounded borders */
+  border-width: 3px;
+  border-color: white;
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}

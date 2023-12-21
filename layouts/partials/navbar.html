@@ -1,0 +1,28 @@
+<div id="root">
+  <div id="topnav" class="topnav">
+    <a id="home_link" href="{{ .Site.BaseURL }}" class="topnav_link"> <img src="/img/logo.svg" style="width: 80px;"/></a>
+
+    <div>
+      <nav role="navigation" id="topnav_menu">
+        <a href="#about">About us</a>
+        <a href="#landscape">Landscape</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div id="topnav_hamburger_icon" href="javascript:void(0);" onclick="showResponsiveMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav role="navigation" id="topnav_responsive_menu">
+      <ul id="topnav_responsive_links">
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL }}" onclick="closeResponsiveMenu()">{{ .Name }}</a></li>
+        {{end}}
+      </ul>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+footer {
+    background-color: #1f293a;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.content-footer {
+    padding-right: 50px;
+    margin-left: 15%;
+}
+
+footer {
+    font-size: 90%;
+}
+
+@media(max-width:650px) {
+    footer {
+        font-size: 50%;
+    }
+}

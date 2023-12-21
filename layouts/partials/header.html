@@ -1,0 +1,62 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/index.css"/>
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/footer.css"/>
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/navbar.css"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+
+
+<script type="text/javascript">
+
+    function showResponsiveMenu() {
+      var menu = document.getElementById("topnav_responsive_menu");
+      var icon = document.getElementById("topnav_hamburger_icon");
+      var root = document.getElementById("root");
+      var links = document.getElementById("topnav_responsive_links");
+
+      if (menu.className === "") {
+        menu.className = "open";
+        icon.className = "open";
+        root.style.overflowY = "hidden";
+      } else {
+        menu.className = "";
+        icon.className = "";
+        root.style.overflowY = "";
+      }
+
+      document.onclick = function(e) {
+          if (menu.contains(e.target) && !links.contains(e.target)) {
+            closeResponsiveMenu();
+          }
+      }
+    }
+
+    function closeResponsiveMenu() {
+      var menu = document.getElementById("topnav_responsive_menu");
+      var icon = document.getElementById("topnav_hamburger_icon");
+      var root = document.getElementById("root");
+
+      menu.className = "";
+      icon.className = "";
+      root.style.overflowY = "";
+    }
+
+    function myFunction() {
+      // Get the snackbar DIV
+      var x = document.getElementById("snackbar");
+      
+      if (window.location.href === "https://vesi-devops.github.io/#form-redirection") {
+        // Add the "show" class to DIV
+        x.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+        window.history.replaceState({}, "", "https://vesi-devops.github.io/")
+      }
+    }
+
+</script>

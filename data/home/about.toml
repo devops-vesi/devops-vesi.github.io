@@ -1,0 +1,18 @@
+title = "DevOps Team From VESI"
+
+text = """
+Vinci Energies Systèmes d'Information (VESI) is a VINCI Energies company. 
+It is the company in charge of managing the systems of information of VINCI Energies. 
+Its missions are to provide and structure the IT tools necessary for the activities of VINCI Energies, 
+and to ensure their deployment and technical support.
+"""
+
+title1 = "The core mission behind all our work"
+
+text1 = """
+There are several departments at VESI including Codex Solutions. 
+The DevOps Team is part of this department. 
+The main mission of our team is to ensure the deployment and maintenance of our ERP based on SAP, 
+in the different acquisitions of Vinci Energies.
+We aim to produce high-quality software applications aligned with the strategic goals of the company and ensure operational efficiency & resiliency while fostering innovation and adaptability to industry changes.
+"""

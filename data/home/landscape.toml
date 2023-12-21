@@ -1,0 +1,70 @@
+# Liste des chiffres clés
+[[numbers]]
+    icon = "/img/landscape/numbers/user.png"
+    name = "44K+"
+    text = " Users"
+
+[[numbers]]
+    icon = "/img/landscape/numbers/countries.png"
+    name = "21"
+    text = "Countries"
+
+[[numbers]]
+    icon = "/img/landscape/numbers/apps.png"
+    name = "131"
+    text = "Active apps"
+
+[[numbers]]
+    icon = "/img/landscape/numbers/sapVersion.png"
+    name = "2020"
+    text = "S/4HANA Version"
+
+
+# Contenu SAP Landscape
+
+# Liste côté Front
+[[front]]
+    icon = "/img/landscape/Sap/front/SAPUI5.png"
+    
+[[front]]
+    icon = "/img/landscape/Sap/front/sonar.png"
+
+[[front]]
+    icon = "/img/landscape/Sap/front/gitlab.png"
+
+[[front]]
+    icon = "/img/landscape/Sap/front/fiori.png"
+
+[[front]]
+    icon = "/img/landscape/Sap/front/webIde.png"
+
+[[front]]
+    icon = "/img/landscape/Sap/front/devops.png"
+
+[[front]]
+    icon = "/img/landscape/Sap/front/btp.png"
+
+[[front]]
+    icon = "/img/landscape/Sap/front/C4.webp"
+
+[[front]]
+    icon = "/img/landscape/Sap/front/analytics.png"
+
+# Liste côté Back
+[[back]]
+    icon = "/img/landscape/Sap/back/abap.png"
+
+[[back]]
+    icon = "/img/landscape/Sap/back/odata.jpg"
+
+[[back]]
+    icon = "/img/landscape/Sap/back/abode.png"
+
+[[back]]
+    icon = "/img/landscape/Sap/back/business.png"
+
+[[back]]
+    icon = "/img/landscape/Sap/back/s4.png"
+
+[[back]]
+    icon = "/img/landscape/Sap/back/mule.png"
