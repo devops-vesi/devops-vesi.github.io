@@ -29,9 +29,10 @@ theme = 'SimpleIntro'
     maintext = "Think it, Build it !"
     name = "DevOps Team"
     urlFooterImg = "/img/logodev.svg"
-    Adress = "8 avenue du Stade de France, 93200 Saint-Denis"
+    Adress = "1 Mail de la Petite Espagne, 93210 Saint-Denis"
     Company = "Vinci Energies Systèmes d'Information"
-    favicon = "/img/favicon.ico"
-
     mailAdress = "exemple@gmail.com"
     defaultContentLanguage = 'en'
+
+[params.meta]
+    favicon = true

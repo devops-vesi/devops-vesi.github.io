@@ -1,5 +1,5 @@
 <body onload="myFunction()">
-<div class="overflow-hidden" onclick="show">
+<div class="overflow-hidden">
   <div id="mainBG" style="background-color: #1f293a;">
     <div class="centerAll main-image">
       <div> <img src="/img/logodev.svg" width="600px" /> </div>
@@ -15,7 +15,7 @@
 
 
 
-    <section id="about" style="margin-top: 3rem; scroll-margin-block-start: 120px">
+    <section id="about" class="px-6 py-4" style="margin-top: 3rem; scroll-margin-block-start: 120px">
       <div class="md:flex justify-center overflow-hidden">{{partial "home_title" (dict "title" "About Us")}}</div> <br>
       <div
         class="mt-4 justify-center text-center grid grid-flow-row md:grid-cols-1 lg:grid-cols-2 lg:grid-flow-row gap-5">
@@ -110,7 +110,7 @@
 
 
 
-    <section id="landscape"  class="px-6 py-4" style="margin-top: 6rem; scroll-margin-block-start: 120px">
+    <section id="landscape" class="px-6 py-4" style="margin-top: 6rem; scroll-margin-block-start: 120px">
       <div class="md:flex justify-center">
         <div class="text-3xl title-deco tracking-wide"> Our Work in Numbers </div>
       </div>
@@ -290,11 +290,6 @@
 
 
 
-
-
-
-
-
 <section id="team" class="px-6 py-4" style="margin-top: 4rem; scroll-margin-block-start: 120px">
     <div class="md:flex justify-center"> {{partial "home_title" (dict "title" "Team Activities")}} </div>
   <br/>
@@ -313,11 +308,7 @@
 
 
 
-
-
-
-
-<section id="team" class="px-6 py-4" style="margin-top: 4rem; scroll-margin-block-start: 120px">
+<section id="team" style="margin-top: 4rem; scroll-margin-block-start: 120px">
   <div class="md:flex justify-center">
     <div class="text-3xl title-deco tracking-wide"> {{partial "home_title" (dict "title" "Team Values")}} </div>
   </div> <br/> <br/>
@@ -358,7 +349,7 @@
   </div>{{end}}
 </section>
 
-<section id="form-redirection"></section>
+<section id="form-redirection" style="scroll-margin-block-start: 120px;"></section>
 
 
 <section id="contact" class="px-6 py-4" style="margin-top: 3rem; scroll-margin-block-start: 120px; margin-bottom: 4rem">
