@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode}}">
+  <head>
+    {{ partial "header.html" . }}
+    <title>{{ $.Site.Title }}</title>
+  </head>
+  <div class="splash">
+    <img src="/img/logo.svg" class="fade-in" id="image">
+    <h1 class="fade-in" id="welcome">Welcome</h1>
+  </div>
+  <body>
+      <a id="button" onclick="to_the_top()"></a>
+      {{ partial "navbar.html" . }}
+      {{ partial "home.html" . }}
+      {{ partial "footer.html" . }}
+  </body>
+</html>

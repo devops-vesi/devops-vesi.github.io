@@ -5,7 +5,11 @@
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/navbar.css"/>
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
 <script type="text/javascript">
@@ -57,5 +61,134 @@
         window.history.replaceState({}, "", "https://devops-vesi.github.io/")
       }
     }
+
+    $(document).scroll(function () {
+      var x = document.getElementById("logo");
+
+      if($(document).scrollTop()> $(document).height()*0.12){
+
+        $(x).attr({src: "/img/logoBleu.svg",});
+
+      } else {
+
+        $(x).attr({src: "/img/logo.svg" ,});
+      }
+    });
+      
+
+    $(document).on("scroll", function() {
+        if($(document).scrollTop() > $(document).height()*0.12) {
+            $("#topnav_menu").css('color',"#1F293A")
+           $(".topnav").css('background-color',"white")
+        } else {
+            //remove the background property so it comes transparent again (defined in your css)
+           $("#topnav_menu").css('color',"white")
+          $(".topnav").css('background-color',"#1F293A")
+        }
+    });
+
+    /* $(document).on ("scroll", function(){
+      if ($(document).scrollTop() > $(document).height()*1) {
+        $("#about").css('visibility',"visible");
+      } else {
+        $("#about").css('visibility',"hidden");
+      }
+
+    }); */
+
+    (function () {
+      "use strict"
+      const animatedElements = new Set();
+        const detectAndAnimate = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+              if (!animatedElements.has(element)){
+                const isVisible = isElementInViewport(element);
+                if(isVisible) {
+                  element.classList.add('is-visible');
+                  animatedElements.add(element);
+                }
+              }
+                
+            });
+        };
+      const isElementInViewport = el => {
+          const rect = el.getBoundingClientRect();
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          return (
+            rect.bottom >= 0 &&
+            rect.top <= viewportHeight
+          );
+      };
+      window.addEventListener('scroll', detectAndAnimate);
+      detectAndAnimate();
+  })();
+  
+document.addEventListener('DOMContentLoaded',(e)=>{
+  const splash = document.querySelector(' .splash');
+  setTimeout(()=>{
+    splash.classList.add('display-none');
+    $(".topnav").css('visibility',"visible");
+    $("body").css('overflow','visible')
+  },2000);
+});
+
+$(window).on("scroll",function() {
+  if($(window).scrollTop() > 150) {
+    $('#button').addClass('show');
+  } else {
+    $('#button').removeClass('show');
+  }
+});
+
+function to_the_top() {
+  console.log("click triggered");
+  $('html, body').animate({scrollTop:0}, '300');
+};
+
+let active = 3;
+
+function loadShow(items){
+    let stt = 0;
+    items[active].style.transform = `none`;
+    items[active].style.zIndex = 1;
+    items[active].style.filter = 'none';
+    items[active].style.opacity = 1;
+    for(var i = active + 1; i < items.length; i++){
+        console.log(items.length);
+        stt++;
+        items[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
+    }
+    stt = 0;
+    for(var i = active - 1; i > 0; i--){
+        stt++;
+        items[i].style.transform = `translateX(${-120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
+    }
+}
+
+document.addEventListener('DOMContentLoaded',function() {
+    let items = document.querySelectorAll('.slider-docu, .item');
+    loadShow(items);
+  });
+
+function next_slide(){
+      let items = document.querySelectorAll('.slider-docu, .item');
+      console.log("next");
+      active = active + 1 < 9 ? active + 1 : active;
+      loadShow(items);
+  };
+
+  function prev_slide(){
+    active = active - 1 > 0 ? active - 1 : active;
+    let items = document.querySelectorAll('.slider-docu, .item');
+    loadShow(items);
+};
+
 
 </script>

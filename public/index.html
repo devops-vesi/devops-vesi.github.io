@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+	<meta name="generator" content="Hugo 0.114.0">
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="DevTeam/css/index.css"/>
+<link rel="stylesheet" href="DevTeam/css/footer.css"/>
+<link rel="stylesheet" href="DevTeam/css/navbar.css"/>
+<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<script type="text/javascript">
+
+    function showResponsiveMenu() {
+      var menu = document.getElementById("topnav_responsive_menu");
+      var icon = document.getElementById("topnav_hamburger_icon");
+      var root = document.getElementById("root");
+      var links = document.getElementById("topnav_responsive_links");
+
+      if (menu.className === "") {
+        menu.className = "open";
+        icon.className = "open";
+        root.style.overflowY = "hidden";
+      } else {
+        menu.className = "";
+        icon.className = "";
+        root.style.overflowY = "";
+      }
+
+      document.onclick = function(e) {
+          if (menu.contains(e.target) && !links.contains(e.target)) {
+            closeResponsiveMenu();
+          }
+      }
+    }
+
+    function closeResponsiveMenu() {
+      var menu = document.getElementById("topnav_responsive_menu");
+      var icon = document.getElementById("topnav_hamburger_icon");
+      var root = document.getElementById("root");
+
+      menu.className = "";
+      icon.className = "";
+      root.style.overflowY = "";
+    }
+
+    function myFunction() {
+      
+      var x = document.getElementById("snackbar");
+      
+      if (window.location.href === "https://devops-vesi.github.io/#form-redirection") {
+        
+        x.className = "show";
+
+        
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+        window.history.replaceState({}, "", "https://devops-vesi.github.io/")
+      }
+    }
+
+    $(document).scroll(function () {
+      var x = document.getElementById("logo");
+
+      if($(document).scrollTop()> $(document).height()*0.12){
+
+        $(x).attr({src: "/img/logoBleu.svg",});
+
+      } else {
+
+        $(x).attr({src: "/img/logo.svg" ,});
+      }
+    });
+      
+
+    $(document).on("scroll", function() {
+        if($(document).scrollTop() > $(document).height()*0.12) {
+            $("#topnav_menu").css('color',"#1F293A")
+           $(".topnav").css('background-color',"white")
+        } else {
+            
+           $("#topnav_menu").css('color',"white")
+          $(".topnav").css('background-color',"#1F293A")
+        }
+    });
+
+    
+
+
+    (function () {
+      "use strict"
+      const animatedElements = new Set();
+        const detectAndAnimate = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+              if (!animatedElements.has(element)){
+                const isVisible = isElementInViewport(element);
+                if(isVisible) {
+                  element.classList.add('is-visible');
+                  animatedElements.add(element);
+                }
+              }
+                
+            });
+        };
+      const isElementInViewport = el => {
+          const rect = el.getBoundingClientRect();
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          return (
+            rect.bottom >= 0 &&
+            rect.top <= viewportHeight
+          );
+      };
+      window.addEventListener('scroll', detectAndAnimate);
+      detectAndAnimate();
+  })();
+  
+document.addEventListener('DOMContentLoaded',(e)=>{
+  const splash = document.querySelector(' .splash');
+  setTimeout(()=>{
+    splash.classList.add('display-none');
+    $(".topnav").css('visibility',"visible");
+    $("body").css('overflow','visible')
+  },2000);
+});
+
+$(window).on("scroll",function() {
+  if($(window).scrollTop() > 150) {
+    $('#button').addClass('show');
+  } else {
+    $('#button').removeClass('show');
+  }
+});
+
+function to_the_top() {
+  console.log("click triggered");
+  $('html, body').animate({scrollTop:0}, '300');
+};
+
+let active = 3;
+
+function loadShow(items){
+    let stt = 0;
+    items[active].style.transform = `none`;
+    items[active].style.zIndex = 1;
+    items[active].style.filter = 'none';
+    items[active].style.opacity = 1;
+    for(var i = active + 1; i < items.length; i++){
+        console.log(items.length);
+        stt++;
+        items[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
+    }
+    stt = 0;
+    for(var i = active - 1; i > 0; i--){
+        stt++;
+        items[i].style.transform = `translateX(${-120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(1deg)`;
+        items[i].style.zIndex = -stt;
+        items[i].style.filter = 'blur(5px)';
+        items[i].style.opacity = stt > 2 ? 0 : 0.6;
+    }
+}
+
+document.addEventListener('DOMContentLoaded',function() {
+    let items = document.querySelectorAll('.slider-docu, .item');
+    loadShow(items);
+  });
+
+function next_slide(){
+      let items = document.querySelectorAll('.slider-docu, .item');
+      console.log("next");
+      active = active + 1 < 9 ? active + 1 : active;
+      loadShow(items);
+  };
+
+  function prev_slide(){
+    active = active - 1 > 0 ? active - 1 : active;
+    let items = document.querySelectorAll('.slider-docu, .item');
+    loadShow(items);
+};
+
+
+</script>
+    <title>VESI DevOps Team</title>
+  </head>
+  <div class="splash">
+    <img src="/img/logo.svg" class="fade-in" id="image">
+    <h1 class="fade-in" id="welcome">Welcome</h1>
+  </div>
+  <body>
+      <a id="button" onclick="to_the_top()"></a>
+      <div id="root">
+  <div id="topnav" class="topnav">
+    <a id="home_link" href="DevTeam" class="topnav_link"> <img src="/img/logo.svg" style="width: 80px;" id="logo"/></a>
+
+    <div>
+      <nav role="navigation" id="topnav_menu">
+        <a href="#about">About us</a>
+        <a href="#landscape">Landscape</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <div id="topnav_hamburger_icon" href="javascript:void(0);" onclick="showResponsiveMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav role="navigation" id="topnav_responsive_menu">
+      <ul id="topnav_responsive_links">
+        
+        <li><a href="#about" onclick="closeResponsiveMenu()">About us</a></li>
+        
+        <li><a href="#landscape" onclick="closeResponsiveMenu()">Landscape</a></li>
+        
+        <li><a href="#team" onclick="closeResponsiveMenu()">Team</a></li>
+        
+        <li><a href="#contact" onclick="closeResponsiveMenu()">Contact</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</div>
+      <body onload="myFunction()">
+<div class="overflow-hidden">
+  <div id="mainBG">
+    <div class="centerAll main-image">
+      <div> <img src="/img/logodev.svg" width="600px" /> </div>
+      <div class="text text-xl text-center">
+        Think it, Build it, Run it !
+      </div>
+    </div>
+    <div class="MouseScroll">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" version="1.1">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g fill="rgba(160, 187, 189, 0.8)">
+                  <path d="M40,41.0074017 L40,41.0074017 L40,58.9925983 C40,64.5218355 44.4762336,69 50,69 C55.5234877,69 60,64.5203508 60,58.9925983 L60,41.0074017 C60,35.4781645 55.5237664,31 50,31 C44.4765123,31 40,35.4796492 40,41.0074017 L40,41.0074017 Z M38,41.0074017 C38,34.3758969 43.3711258,29 50,29 C56.627417,29 62,34.3726755 62,41.0074017 L62,58.9925983 C62,65.6241031 56.6288742,71 50,71 C43.372583,71 38,65.6273245 38,58.9925983 L38,41.0074017 L38,41.0074017 Z"></path>
+                  <path d="M49,36 L49,40 C49,40.5522847 49.4477153,41 50,41 C50.5522847,41 51,40.5522847 51,40 L51,36 C51,35.4477153 50.5522847,35 50,35 C49.4477153,35 49,35.4477153 49,36 L49,36 Z"></path>
+                  <path d="M50,81.9929939 L55.4998372,76.4931567 C55.8903615,76.1026324 56.5235265,76.1026324 56.9140508,76.4931567 C57.3045751,76.883681 57.3045751,77.516846 56.9140508,77.9073703 L50.7071068,84.1143143 C50.5118446,84.3095764 50.2559223,84.4072075 50,84.4072075 C49.7440777,84.4072075 49.4881554,84.3095764 49.2928932,84.1143143 L43.038379,77.8598002 C42.6478547,77.4692759 42.6478547,76.8361109 43.038379,76.4455866 C43.4289033,76.0550623 44.0620683,76.0550623 44.4525926,76.4455866 L50,81.9929939 Z" class="MouseScroll--chevron"></path>
+              </g>
+          </g>
+      </svg>
+  </div>
+  </div>
+
+  </div>
+  <main class="container mx-auto mt-8 px-4 xl:px-0">
+
+    <section id="about" class="px-6 py-4 animate-on-scroll" style="margin-top: 3rem; scroll-margin-block-start: 120px">
+      <div class="md:flex justify-center overflow-hidden"><div class="text-3xl title-deco tracking-wide">
+  About Us
+</div>
+</div> <br>
+      <div
+        class="mt-4 justify-center text-center grid grid-flow-row md:grid-cols-1 lg:grid-cols-2 lg:grid-flow-row gap-5">
+        <div>
+          <div class="text-2xl font-bold">
+            
+            DevOps Team From VESI
+            
+          </div>
+          <div class="text-lg mt-3">
+            <div>
+              
+              Vinci Energies Systèmes d'Information (VESI) is a VINCI Energies company. <br />It is the company in charge of managing the systems of information of VINCI Energies. <br />Its missions are to provide and structure the IT tools necessary for the activities of VINCI Energies, <br />and to ensure their deployment and technical support.<br />
+              
+            </div>
+          </div>
+        </div>
+        <div class="overflow-hidden">
+          <div class="sliderContainer slider-position">
+            <div class="slider" style="overflow: visible;">
+              <div class="slide-track">
+                <div class="slide"> <img class="avatar" src="/img/Image1.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image3.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image4.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image6.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image7.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image8.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image9.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image10.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image11.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image12.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image13.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image14.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image1.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image3.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image4.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image6.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image7.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image8.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image9.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image10.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image11.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image12.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image13.png"/>
+                </div>
+                <div class="slide"> <img class="avatar" src="/img/Image14.png"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="lg:mt-10 mt-6">
+          <div class="text-2xl font-bold text-center">
+            The core mission behind all our work
+            
+          </div>
+          <div class="text-lg mt-3 text-center">
+            <div>
+              There are several departments at VESI including Codex Solutions. <br />The DevOps Team is part of this department. <br />The main mission of our team is to ensure the deployment and maintenance of our ERP based on SAP, <br />in the different acquisitions of Vinci Energies.<br />We aim to produce high-quality software applications aligned with the strategic goals of the company and ensure operational efficiency & resiliency while fostering innovation and adaptability to industry changes.<br />
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <section id="landscape" class="px-6 py-4 animate-on-scroll" style="margin-top: 6rem; scroll-margin-block-start: 120px">
+      <div class="md:flex justify-center">
+        <div class="text-3xl title-deco tracking-wide"> Our Work in Numbers </div>
+      </div>
+      <div class="mt-10 grid grid-flow-row grid-cols-2 md:grid-cols-2 lg:grid-cols-8 justify-center wrapper overflow-hidden">
+        <div class="responsive_div"></div>
+        <div class="responsive_div"></div>
+        <div class="overflow-hidden">
+          <div>
+            <div class="font-bold text-xl mx-auto my-auto">
+              <div> <img src="/img/landscape/numbers/user.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+                <div class="text-center"> 44K+ </div>
+              </div>
+            </div>
+            <p class="text-center"> SAP Users </p>
+          </div>
+        </div>
+        <div class="overflow-hidden">
+          <div>
+            <div class="font-bold text-xl mx-auto my-auto">
+              <div> <img src="/img/landscape/numbers/countries.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+                <div class="text-center"> 21 </div>
+              </div>
+            </div>
+            <p class="text-center"> Countries </p>
+          </div>
+        </div>
+        <div class="overflow-hidden">
+          <div class="numbers-icons">
+            <div class="font-bold text-xl mx-auto my-auto">
+              <div> <img src="/img/landscape/numbers/apps.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+                <div class="text-center"> 131 </div>
+              </div>
+            </div>
+            <p class="text-center"> Fiori apps </p>
+          </div>
+        </div>
+        <div class="overflow-hidden">
+          <div class="numbers-icons">
+            <div class="font-bold text-xl mx-auto my-auto">
+              <div> <img src="/img/landscape/numbers/lines-of-code.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+                <div class="text-center"> 7M+ </div>
+              </div>
+            </div>
+            <p class="text-center"> Lines of custom code </p>
+          </div>
+        </div>
+        <div class="responsive_div"></div>
+        <div class="responsive_div"></div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <section class="overflow-hidden px-6 py-4 animate-on-scroll" style="margin-top: 6rem; scroll-margin-block-start: 120px">
+    <div class="md:flex justify-center">
+      <div class="text-3xl title-deco tracking-wid "> SAP Landscape </div>
+    </div>
+    <div class="container23 mt-10 grid grid-flow-row md:grid-cols-2 lg:grid-cols-2" style="column-gap: 8rem;">
+      <div class="justify-center mt-4" style="display: grid; justify-content: right;">
+        <ul>
+          <div class="text-2xl font-bold text-center">
+            On-Premise & Back
+          </div>
+          
+            <li id="TEST">ABAP</li>
+          
+          
+            <li id="TEST">SAP S/4HANA 2020</li>
+          
+          
+            <li id="TEST">ABAP CDS</li>
+          
+          
+            <li id="TEST">ODATA</li>
+          
+          
+            <li id="TEST">ABAP Eclipse</li>
+          
+          
+            <li id="TEST">Adobe Forms</li>
+          
+          
+            <li id="TEST">Mulesoft</li>
+          
+        </ul>
+      </div>
+      <div class="justify-center list-responsive" style="display: grid; justify-content: left;">
+        <ul>
+          <div class="text-2xl font-bold text-center">
+            Cloud & New Tech
+          </div>
+          
+            <li id="TEST">SAPUI5</li>
+          
+          
+            <li id="TEST">Fiori</li>
+          
+          
+            <li id="TEST">SAP BTP</li>
+          
+          
+            <li id="TEST">SAP BAS</li>
+          
+          
+            <li id="TEST">GitLab</li>
+          
+          
+            <li id="TEST">SonarQube</li>
+          
+          
+            <li id="TEST">DevOps</li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="team" class="px-6 py-4 animate-on-scroll" style="margin-top: 4rem; scroll-margin-block-start: 120px">
+    <div class="md:flex justify-center"> <div class="text-3xl title-deco tracking-wide">
+  Team Activities
+</div>
+ </div>
+  <br/>
+  
+  <div class="mt-8 grid grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/deployment.png" width="80px"
+        style="margin-top: 10px; margin-left: 20px;" /> </a>
+      <div class="px-6 py-4 desc">
+        <div class="font-bold text-l mb-2">SAP Deployments</div>
+        <p class="text-gray-700 text-base">        Our Team works to execute the SAP Deployment in new Vinci Energies companies.
+    </p>
+      </div>
+    </div>
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/enhancement.png" width="80px"
+        style="margin-top: 10px; margin-left: 20px;" /> </a>
+      <div class="px-6 py-4 desc">
+        <div class="font-bold text-l mb-2">Enhancements</div>
+        <p class="text-gray-700 text-base">        Core model enhancements and maintenance.
+    </p>
+      </div>
+    </div>
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/upgrade.png" width="80px"
+        style="margin-top: 10px; margin-left: 20px;" /> </a>
+      <div class="px-6 py-4 desc">
+        <div class="font-bold text-l mb-2">Upgrades</div>
+        <p class="text-gray-700 text-base">        SAP Landscape upgrades every 2 to 3 years.
+    </p>
+      </div>
+    </div>
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/project.png" width="80px"
+        style="margin-top: 10px; margin-left: 20px;" /> </a>
+      <div class="px-6 py-4 desc">
+        <div class="font-bold text-l mb-2">Projects</div>
+        <p class="text-gray-700 text-base">        Various projects related to the SAP domain.
+    </p>
+      </div>
+    </div>
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/iso.png" width="80px"
+        style="margin-top: 10px; margin-left: 20px;" /> </a>
+      <div class="px-6 py-4 desc">
+        <div class="font-bold text-l mb-2">Quality &amp; Security</div>
+        <p class="text-gray-700 text-base">        Compliance with the ISO 27001 standard and involvement in several topics related to the quality of the code.
+    </p>
+      </div>
+    </div>
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/exploration.png" width="80px"
+        style="margin-top: 10px; margin-left: 20px;" /> </a>
+      <div class="px-6 py-4 desc">
+        <div class="font-bold text-l mb-2">Exploration</div>
+        <p class="text-gray-700 text-base">        Various explorations of new technologies and innovations.
+    </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="team" class="animate-on-scroll"  style="margin-top: 4rem; scroll-margin-block-start: 120px">
+  <div class="md:flex justify-center">
+    <div class="text-3xl title-deco tracking-wide"> <div class="text-3xl title-deco tracking-wide">
+  Team Values
+</div>
+ </div>
+  </div> <br/> <br/>
+  <div class="value">
+    <div class="slider2">
+      <div style="background-color: #1f293a;">
+        <div class="mt-4 grid grid-flow-row grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/commitment.png" />
+            <div class="px-6 py-4">
+              <p class="text-white text-base">Commitment &amp; Result focused</p>
+            </div>
+          </div>
+          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/elearning.png" />
+            <div class="px-6 py-4">
+              <p class="text-white text-base">Ambition &amp; Initiatives</p>
+            </div>
+          </div>
+          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/sharing.png" />
+            <div class="px-6 py-4">
+              <p class="text-white text-base">Innovation &amp; Sharing</p>
+            </div>
+          </div>
+          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/trust.png" />
+            <div class="px-6 py-4">
+              <p class="text-white text-base">Autonomy &amp; Trust</p>
+            </div>
+          </div>
+          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/disabilities.png" />
+            <div class="px-6 py-4">
+              <p class="text-white text-base">Involved in disabilities issues</p>
+            </div>
+          </div>
+          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/team.png" />
+            <div class="px-6 py-4">
+              <p class="text-white text-base">Team working</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="team" class="px-6 py-4 animate-on-scroll" style="scroll-margin-block-start: 120px">
+  <div class="md:flex justify-center">
+    <div class="text-3xl title-deco tracking-wide"> <div class="text-3xl title-deco tracking-wide">
+  Team Certifications
+</div>
+ </div>
+  </div> <br />
+  <div class="mt-8 grid grid-flow-row grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
+    
+    <div class="w-full rounded overflow-hidden shadow-lg">
+      <img class="py-1 px-3" src="/img/team/certifications/sap.png" width="130px" style="margin-top: 10px; margin-left: 5px;" />
+      <div class="px-6 py-4 desc">
+        <div class="font-bold text-l mb-2">SAP Certifications</div>
+        <p class="text-gray-700 text-base">Multiple technical SAP certifications in the team : more than 50% of team members are SAP certified.</p>
+      </div>
+    </div>
+    <div class="w-full rounded overflow-hidden shadow-lg">
+      <img class="py-1 px-3" src="/img/team/certifications/iso.png" width="130px" style="margin-top: 10px; margin-left: 5px;" />
+      <div class="px-6 py-4 desc">
+        <div class="font-bold text-l mb-2">ISO 27001</div>
+        <p class="text-gray-700 text-base">ISO 27001 is an international standard for information systems security. Security is a top priority for our team, and we ensure that our development process is secure.</p>
+      </div>
+    </div>
+    <div class="w-full rounded overflow-hidden shadow-lg">
+      <img class="py-1 px-3" src="/img/team/certifications/clean-code.png" width="130px" style="margin-top: 10px; margin-left: 5px;" />
+      <div class="px-6 py-4 desc">
+        <div class="font-bold text-l mb-2">Technical Excellence Coaching</div>
+        <p class="text-gray-700 text-base">Coaching by SAP Champion followed by some members of the team to introduce the concept of Technical Excellence in our work perimeter.</p>
+      </div>
+    </div>
+    <div class="w-full rounded overflow-hidden shadow-lg">
+      <img class="py-1 px-3" src="/img/team/certifications/SIT-label-level2.png" width="130px" style="margin-top: 10px; margin-left: 5px;" />
+      <div class="px-6 py-4 desc">
+        <div class="font-bold text-l mb-2">Sustainable IT - Level 2</div>
+        <p class="text-gray-700 text-base">This label validates our commitment to a more responsible use of digital technology, and our respect for accessibility standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+<section id="team" class="px-6 py-4 animate-on-scroll" style="scroll-margin-block-start: 120px">
+  <div class="md:flex justify-center">
+    <div class="text-3xl title-deco tracking-wide"> <div class="text-3xl title-deco tracking-wide">
+  Team Documentation
+</div>
+ </div>
+  </div> 
+  <br>
+  <br>
+  <br>
+  <div class="slider-docu">
+  <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/improve.png">
+      </a>
+        <div class="info">
+            <h1>Improving your code performance: double loop vs for group</h1>
+            <p> Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? 
+                Is there any performance difference ?
+            </p>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/tile/view/3955">
+          <img src="/img/BAS.png">
+      </a>
+        <div class="info">
+            <h1>SAP BAS : S4HANA On premise Deployment</h1>
+            <p>SAP Business Application Studio is an SAP Business Technology Platform service in the Cloud Foundry environment. 
+
+              It is built on open-source and leading industry standards and supports a modular approach to developing different kinds of apps.
+            </p>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/tile/view/6112">
+          <img src="/img/js.png">
+      </a>
+        <div class="info">
+            <h1>Modern JavaScript Syntax in SAPUI5</h1>
+            <p>Present modern JavaScript syntaxe and features that can be applied in SAPUI5.</p>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/téléchargement.jpg">
+      </a>
+        <div class="info">
+            <h1>Moi</h1>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/téléchargement.jpg">
+      </a>
+        <div class="info">
+            <h1>Moi</h1>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/téléchargement.jpg">
+      </a>
+        <div class="info">
+            <h1>Moi</h1>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/téléchargement.jpg">
+      </a>
+      <div class="info">
+          <h1>Moi</h1>
+      </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/téléchargement.jpg">
+      </a>
+      <div class="info">
+          <h1>Moi</h1>
+      </div>
+    </div>
+    <a onclick="next_slide()" id="next-slide" ></a>
+    <a onclick="prev_slide()" id="prev-slide" ></a>
+  </div>
+</section>
+
+<section id="form-redirection" style="scroll-margin-block-start: 120px;"></section>
+<section id="contact" class="px-6 py-4 animate-on-scroll" style="margin-top: 3rem; scroll-margin-block-start: 120px; margin-bottom: 4rem">
+  <div class="md:flex justify-center">
+    <div class="text-3xl title-deco tracking-wide"> Contact Us </div>
+  </div>
+  <br/>
+  <div style="display:flex; justify-content: center;">
+    <div class="mt-8" style="background-color: #1f293a; padding: 60px; border-radius: 10%;">
+    <form action="https://fabform.io/f/fhibea_" method="post"> <input
+        name="name" type="text" placeholder="Name"
+        style="all: unset; border-bottom: 1px solid white; margin-left: 5px; color: white;"> <br /> <br /> <input name="email"
+        type="email" required placeholder="Email" style="all:unset; color: white; border-bottom: 1px solid white; margin-left: 5px;"> <br /> <br />
+      <textarea name="message" type="text" required placeholder="Message" style="all:unset; border-bottom: 1px solid white; color: white; margin-left: 5px; height: 120px; width: 180px;"></textarea>
+      <br/><br/><br/> <button type="submit" class="hover-btn">Send</button>
+    </form>
+    </div>
+  </div>
+</section>
+
+<div id="snackbar">Message sended</div>
+
+</main>
+</div>
+</body>
+      <footer class="mt-8 grid grid-flow-row grid-cols-2 gap-4">
+    <div>
+        <img src="/img/logodev.svg" class="content-footer" width="60%"/>
+    </div>
+    <div>
+        Vinci Energies Systèmes d&#39;Information
+        <br />
+        <a href="https://maps.app.goo.gl/i1MVPzPAhYmkcEpy7"  target="_blank" rel="noopener noreferrer"> <u> 1 Mail de la Petite Espagne, 93210 Saint-Denis </u></a>
+    </div>
+    <div>
+    
+    </div>
+</footer>
+  
+  </body>
+</html>

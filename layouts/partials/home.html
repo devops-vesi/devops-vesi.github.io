@@ -1,21 +1,29 @@
 <body onload="myFunction()">
 <div class="overflow-hidden">
-  <div id="mainBG" style="background-color: #1f293a;">
+  <div id="mainBG">
     <div class="centerAll main-image">
       <div> <img src="/img/logodev.svg" width="600px" /> </div>
       <div class="text text-xl text-center">
-        {{if $.Site.Params.maintext}}
-        {{$.Site.Params.maintext}}
-        {{else}}Edit config.toml/params{{end}}
+        {{if $.Site.Params.maintext}}{{ $.Site.Params.maintext }}{{else}}Edit config.toml/params{{end}}
       </div>
     </div>
-  </div>{{$data := .Site.Data.home}}<main class="container mx-auto mt-8 px-4 xl:px-0">
+    <div class="MouseScroll">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" version="1.1">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g fill="rgba(160, 187, 189, 0.8)">
+                  <path d="M40,41.0074017 L40,41.0074017 L40,58.9925983 C40,64.5218355 44.4762336,69 50,69 C55.5234877,69 60,64.5203508 60,58.9925983 L60,41.0074017 C60,35.4781645 55.5237664,31 50,31 C44.4765123,31 40,35.4796492 40,41.0074017 L40,41.0074017 Z M38,41.0074017 C38,34.3758969 43.3711258,29 50,29 C56.627417,29 62,34.3726755 62,41.0074017 L62,58.9925983 C62,65.6241031 56.6288742,71 50,71 C43.372583,71 38,65.6273245 38,58.9925983 L38,41.0074017 L38,41.0074017 Z"></path>
+                  <path d="M49,36 L49,40 C49,40.5522847 49.4477153,41 50,41 C50.5522847,41 51,40.5522847 51,40 L51,36 C51,35.4477153 50.5522847,35 50,35 C49.4477153,35 49,35.4477153 49,36 L49,36 Z"></path>
+                  <path d="M50,81.9929939 L55.4998372,76.4931567 C55.8903615,76.1026324 56.5235265,76.1026324 56.9140508,76.4931567 C57.3045751,76.883681 57.3045751,77.516846 56.9140508,77.9073703 L50.7071068,84.1143143 C50.5118446,84.3095764 50.2559223,84.4072075 50,84.4072075 C49.7440777,84.4072075 49.4881554,84.3095764 49.2928932,84.1143143 L43.038379,77.8598002 C42.6478547,77.4692759 42.6478547,76.8361109 43.038379,76.4455866 C43.4289033,76.0550623 44.0620683,76.0550623 44.4525926,76.4455866 L50,81.9929939 Z" class="MouseScroll--chevron"></path>
+              </g>
+          </g>
+      </svg>
+  </div>
+  </div>
 
+  </div>
+  {{$data := .Site.Data.home}}<main class="container mx-auto mt-8 px-4 xl:px-0">
 
-
-
-
-    <section id="about" class="px-6 py-4" style="margin-top: 3rem; scroll-margin-block-start: 120px">
+    <section id="about" class="px-6 py-4 animate-on-scroll" style="margin-top: 3rem; scroll-margin-block-start: 120px">
       <div class="md:flex justify-center overflow-hidden">{{partial "home_title" (dict "title" "About Us")}}</div> <br>
       <div
         class="mt-4 justify-center text-center grid grid-flow-row md:grid-cols-1 lg:grid-cols-2 lg:grid-flow-row gap-5">
@@ -110,7 +118,7 @@
 
 
 
-    <section id="landscape" class="px-6 py-4" style="margin-top: 6rem; scroll-margin-block-start: 120px">
+    <section id="landscape" class="px-6 py-4 animate-on-scroll" style="margin-top: 6rem; scroll-margin-block-start: 120px">
       <div class="md:flex justify-center">
         <div class="text-3xl title-deco tracking-wide"> Our Work in Numbers </div>
       </div>
@@ -167,7 +175,7 @@
 
 
 
-    <section class="overflow-hidden px-6 py-4" style="margin-top: 6rem; scroll-margin-block-start: 120px">
+    <section class="overflow-hidden px-6 py-4 animate-on-scroll" style="margin-top: 6rem; scroll-margin-block-start: 120px">
     <div class="md:flex justify-center">
       <div class="text-3xl title-deco tracking-wid "> SAP Landscape </div>
     </div>
@@ -290,7 +298,7 @@
 
 
 
-<section id="team" class="px-6 py-4" style="margin-top: 4rem; scroll-margin-block-start: 120px">
+<section id="team" class="px-6 py-4 animate-on-scroll" style="margin-top: 4rem; scroll-margin-block-start: 120px">
     <div class="md:flex justify-center"> {{partial "home_title" (dict "title" "Team Activities")}} </div>
   <br/>
   {{if $data.team.activities}}
@@ -308,7 +316,7 @@
 
 
 
-<section id="team" style="margin-top: 4rem; scroll-margin-block-start: 120px">
+<section id="team" class="animate-on-scroll"  style="margin-top: 4rem; scroll-margin-block-start: 120px">
   <div class="md:flex justify-center">
     <div class="text-3xl title-deco tracking-wide"> {{partial "home_title" (dict "title" "Team Values")}} </div>
   </div> <br/> <br/>
@@ -332,15 +340,15 @@
     </div> </div> </div> <div class="prevNext"> <div><a></a><a href="#s1" class="arrow-right"></a></a><a href="#s2" class="arrow-right"></a></div> <div><a href="#s1" class="arrow-left"></a></div> </div> </div> </section> -->
 
 
-<section id="team" class="px-6 py-4" style="scroll-margin-block-start: 120px">
+<section id="team" class="px-6 py-4 animate-on-scroll" style="scroll-margin-block-start: 120px">
   <div class="md:flex justify-center">
     <div class="text-3xl title-deco tracking-wide"> {{partial "home_title" (dict "title" "Team Certifications")}} </div>
   </div> <br />{{if
   $data.team.certification}}
-  <div class="mt-8 grid grid-flow-row grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">{{range
-    $data.team.certification}}
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img class="py-1 px-3" src="{{ .image }}" width="130px"
-        style="margin-top: 10px; margin-left: 5px;" />
+  <div class="mt-8 grid grid-flow-row grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
+    {{range $data.team.certification}}
+    <div class="w-full rounded overflow-hidden shadow-lg">
+      <img class="py-1 px-3" src="{{ .image }}" width="130px" style="margin-top: 10px; margin-left: 5px;" />
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">{{.title}}</div>
         <p class="text-gray-700 text-base">{{.text}}</p>
@@ -349,10 +357,95 @@
   </div>{{end}}
 </section>
 
+<br>
+<br>
+<section id="team" class="px-6 py-4 animate-on-scroll" style="scroll-margin-block-start: 120px">
+  <div class="md:flex justify-center">
+    <div class="text-3xl title-deco tracking-wide"> {{partial "home_title" (dict "title" "Team Documentation")}} </div>
+  </div> 
+  <br>
+  <br>
+  <br>
+  <div class="slider-docu">
+  <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/improve.png">
+      </a>
+        <div class="info">
+            <h1>Improving your code performance: double loop vs for group</h1>
+            <p> Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? 
+                Is there any performance difference ?
+            </p>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/tile/view/3955">
+          <img src="/img/BAS.png">
+      </a>
+        <div class="info">
+            <h1>SAP BAS : S4HANA On premise Deployment</h1>
+            <p>SAP Business Application Studio is an SAP Business Technology Platform service in the Cloud Foundry environment. 
+
+              It is built on open-source and leading industry standards and supports a modular approach to developing different kinds of apps.
+            </p>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/tile/view/6112">
+          <img src="/img/js.png">
+      </a>
+        <div class="info">
+            <h1>Modern JavaScript Syntax in SAPUI5</h1>
+            <p>Present modern JavaScript syntaxe and features that can be applied in SAPUI5.</p>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/téléchargement.jpg">
+      </a>
+        <div class="info">
+            <h1>Moi</h1>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/téléchargement.jpg">
+      </a>
+        <div class="info">
+            <h1>Moi</h1>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/téléchargement.jpg">
+      </a>
+        <div class="info">
+            <h1>Moi</h1>
+        </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/téléchargement.jpg">
+      </a>
+      <div class="info">
+          <h1>Moi</h1>
+      </div>
+    </div>
+    <div class="item">
+      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
+          <img src="/img/téléchargement.jpg">
+      </a>
+      <div class="info">
+          <h1>Moi</h1>
+      </div>
+    </div>
+    <a onclick="next_slide()" id="next-slide" ></a>
+    <a onclick="prev_slide()" id="prev-slide" ></a>
+  </div>
+</section>
+
 <section id="form-redirection" style="scroll-margin-block-start: 120px;"></section>
-
-
-<section id="contact" class="px-6 py-4" style="margin-top: 3rem; scroll-margin-block-start: 120px; margin-bottom: 4rem">
+<section id="contact" class="px-6 py-4 animate-on-scroll" style="margin-top: 3rem; scroll-margin-block-start: 120px; margin-bottom: 4rem">
   <div class="md:flex justify-center">
     <div class="text-3xl title-deco tracking-wide"> Contact Us </div>
   </div>

@@ -40,80 +40,6 @@
         Various explorations of new technologies and innovations.
     """
 
-
-[[members]]
-    icon = "/img/team/members/walid.jpeg"
-
-[[members]]
-    icon = "/img/team/members/nizard.jpeg"
-
-[[members]]
-    icon = "/img/team/members/nicolas.jpeg"
-
-[[members]]
-    icon = "/img/team/members/haifan.png"
-
-[[members]]
-    icon = "/img/team/members/nizare.png"
-
-[[members]]
-    icon = "/img/team/members/amin.jpeg"
-
-[[members]]
-    icon = "/img/team/members/ali.jpg"
-
-[[members]]
-    icon = "/img/team/members/zouhour.png"
-
-[[members]]
-    icon = "/img/team/members/walid.jpeg"
-
-[[members]]
-    icon = "/img/team/members/nizard.jpeg"
-
-[[members]]
-    icon = "/img/team/members/nicolas.jpeg"
-
-[[members]]
-    icon = "/img/team/members/haifan.png"
-
-[[members]]
-    icon = "/img/team/members/nizare.png"
-
-[[members]]
-    icon = "/img/team/members/amin.jpeg"
-
-[[members]]
-    icon = "/img/team/members/ali.jpg"
-
-[[members]]
-    icon = "/img/team/members/zouhour.png"
-
-[[members]]
-    icon = "/img/team/members/walid.jpeg"
-
-[[members]]
-    icon = "/img/team/members/nizard.jpeg"
-
-[[members]]
-    icon = "/img/team/members/nicolas.jpeg"
-
-[[members]]
-    icon = "/img/team/members/haifan.png"
-
-[[members]]
-    icon = "/img/team/members/nizare.png"
-
-[[members]]
-    icon = "/img/team/members/amin.jpeg"
-
-[[members]]
-    icon = "/img/team/members/ali.jpg"
-
-[[members]]
-    icon = "/img/team/members/zouhour.png"
-
-
 [[values]]
     image = "/img/team/values/commitment.png"
     text = "Commitment & Result focused"
@@ -157,3 +83,45 @@
     image = "/img/team/certifications/SIT-label-level2.png"
     title = "Sustainable IT - Level 2"
     text = "This label validates our commitment to a more responsible use of digital technology, and our respect for accessibility standards."
+
+
+[[documentation]]
+    image = ""
+    title = "Import Fiori Standard App from BSP Repository in BAS"
+    text = "Web IDE had the functionality of importing standard projects from ABAP Repository into your workspace. As of now it is not possible in BAS. In some cases we need the standard application files to debug and to upgrade existing extensions of application."
+
+[[documentation]]
+    image = ""
+    title = "Improving your code performance: double loop vs for group"
+    text = "Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? Is there any performance difference ? Well this article will try to show if there is any difference in performance for different types of iteration."
+
+[[documentation]]
+    image = ""
+    title = "Improving your code performance: double loop vs for group"
+    text = "Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? Is there any performance difference ? Well this article will try to show if there is any difference in performance for different types of iteration."
+
+[[documentation]]
+    image = ""
+    title = "Improving your code performance: double loop vs for group"
+    text = "Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? Is there any performance difference ? Well this article will try to show if there is any difference in performance for different types of iteration."
+
+[[documentation]]
+    image = ""
+    title = "Improving your code performance: double loop vs for group"
+    text = "Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? Is there any performance difference ? Well this article will try to show if there is any difference in performance for different types of iteration."
+
+[[documentation]]
+    image = ""
+    title = "Improving your code performance: double loop vs for group"
+    text = "Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? Is there any performance difference ? Well this article will try to show if there is any difference in performance for different types of iteration."
+
+[[documentation]]
+    image = ""
+    title = "Improving your code performance: double loop vs for group"
+    text = "Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? Is there any performance difference ? Well this article will try to show if there is any difference in performance for different types of iteration." 
+
+[[documentation]]
+    image = ""
+    title = "Improving your code performance: double loop vs for group"
+    text = "Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? Is there any performance difference ? Well this article will try to show if there is any difference in performance for different types of iteration." 
+

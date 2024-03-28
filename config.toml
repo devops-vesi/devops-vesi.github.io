@@ -26,7 +26,7 @@ theme = 'SimpleIntro'
         url = "#contact"
 
 [params]
-    maintext = "Think it, Build it !"
+    maintext = "Think it, Build it, Run it !"
     name = "DevOps Team"
     urlFooterImg = "/img/logodev.svg"
     Adress = "1 Mail de la Petite Espagne, 93210 Saint-Denis"
