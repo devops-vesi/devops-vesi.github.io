@@ -1,41 +1,41 @@
 [[activities]]
     title = "SAP Deployments"
-    image = "/img/team/activities/deployment.png"
+    image = "/img/team/activities/monde.png"
     text = """
         Our Team works to execute the SAP Deployment in new Vinci Energies companies.
     """
 
 [[activities]]
     title = "Enhancements"
-    image = "/img/team/activities/enhancement.png"
+    image = "/img/team/activities/maintenance-web.png"
     text = """
         Core model enhancements and maintenance.
     """
 
 [[activities]]
     title = "Upgrades"
-    image = "/img/team/activities/upgrade.png"
+    image = "/img/team/activities/ameliorer.png"
     text = """
         SAP Landscape upgrades every 2 to 3 years.
     """
 
 [[activities]]
     title = "Projects"
-    image = "/img/team/activities/project.png"
+    image = "/img/team/activities/gestion-de-projet.png"
     text = """
         Various projects related to the SAP domain.
     """
 
 [[activities]]
     title = "Quality & Security"
-    image = "/img/team/activities/iso.png"
+    image = "/img/team/activities/assurance-informatique.png"
     text = """
         Compliance with the ISO 27001 standard and involvement in several topics related to the quality of the code.
     """
 
 [[activities]]
     title = "Exploration"
-    image = "/img/team/activities/exploration.png"
+    image = "/img/team/activities/loupe.png"
     text = """
         Various explorations of new technologies and innovations.
     """

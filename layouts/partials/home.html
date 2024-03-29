@@ -128,7 +128,7 @@
         <div class="overflow-hidden">
           <div>
             <div class="font-bold text-xl mx-auto my-auto">
-              <div> <img src="/img/landscape/numbers/user.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+              <div> <img src="/img/landscape/numbers/user.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
                 <div class="text-center"> 44K+ </div>
               </div>
             </div>
@@ -138,7 +138,7 @@
         <div class="overflow-hidden">
           <div>
             <div class="font-bold text-xl mx-auto my-auto">
-              <div> <img src="/img/landscape/numbers/countries.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+              <div> <img src="/img/landscape/numbers/countries.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
                 <div class="text-center"> 21 </div>
               </div>
             </div>
@@ -148,7 +148,7 @@
         <div class="overflow-hidden">
           <div class="numbers-icons">
             <div class="font-bold text-xl mx-auto my-auto">
-              <div> <img src="/img/landscape/numbers/apps.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+              <div> <img src="/img/landscape/numbers/apps.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
                 <div class="text-center"> 131 </div>
               </div>
             </div>
@@ -158,7 +158,7 @@
         <div class="overflow-hidden">
           <div class="numbers-icons">
             <div class="font-bold text-xl mx-auto my-auto">
-              <div> <img src="/img/landscape/numbers/lines-of-code.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+              <div> <img src="/img/landscape/numbers/lines-of-code.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
                 <div class="text-center"> 7M+ </div>
               </div>
             </div>
@@ -304,7 +304,7 @@
   {{if $data.team.activities}}
   <div class="mt-8 grid grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">{{range
     $data.team.activities}}
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="{{ .image }}" width="80px"
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="{{ .image }}" width="20%"
         style="margin-top: 10px; margin-left: 20px;" /> </a>
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">{{.title}}</div>
@@ -365,86 +365,148 @@
   </div> 
   <br>
   <br>
-  <br>
-  <div class="slider-docu">
-  <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/improve.png">
-      </a>
-        <div class="info">
-            <h1>Improving your code performance: double loop vs for group</h1>
-            <p> Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? 
-                Is there any performance difference ?
-            </p>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/tile/view/3955">
-          <img src="/img/BAS.png">
-      </a>
-        <div class="info">
-            <h1>SAP BAS : S4HANA On premise Deployment</h1>
-            <p>SAP Business Application Studio is an SAP Business Technology Platform service in the Cloud Foundry environment. 
+  <div class="slider-docu owl-carousel">
+      <div class="card">
+          <div class="img">
+              <img src="/img/zdev.png" />
+          </div>
+          <div class="content">
+              <div class="title">
+                  ZDEVTIMESHEET
+              </div>
+              <div class="sub-title">
+                  Entering timesheet
+              </div>
+              <p>
+                Timesheets are now entered using the ZDEVTIMESHEET transaction. 
+                The goal is to track the daily activity of each team member in order to justify to management the time spent on development and additional activities.
+              </p>
+              <br>
+              <a href="https://vinci-energies.elium.com/tile/view/4821/" target="_blank">
+                  <button>
+                      Read More
+                  </button>
+              </a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="img">
+              <img src="/img/cleaner.png" />
+          </div>
+          <div class="content">
+              <div class="title">
+                  ABAP cleaner
+              </div>
+              <div class="sub-title">
+                Installation of ABAP cleaner
+              </div>
+              <p>
+                ABAP Cleaner tool is a powerful and configurable tool for automating the refinement of ABAP code, establishing uniformity, 
+                minimizing errors, encouraging modernization, nurturing collaborative code ownership, and enhancing maintainability.
+              </p>
+              <br>
+              <a href="https://vinci-energies.elium.com/tile/view/6280/" target="_blank">
+                  <button>
+                    Read More
+                  </button>
+              </a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="img">
+              <img src="/img/SAT.png" />
+          </div>
+          <div class="content">
+              <div class="title">
+                SAT transaction
+              </div>
+              <div class="sub-title">
+                Do SAT traces on UI5 applications
+              </div>
+              <p>
+                The SAT transaction is an extremely useful tool for analyzing and optimizing the performance of SAP GUI transactions. 
+                However, performing a SAT Trace on an SAPUI5 application can be challenging since the SAT transaction does not support launching SAPUI5 applications directly. 
+              </p>
+              <br>
+              <a href="https://vinci-energies.elium.com/tile/view/6101/" target="_blank">
+                  <button>
+                    Read More
+                  </button>
+              </a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="img">
+              <img src="/img/BAS.png" />
+          </div>
+          <div class="content">
+              <div class="title">
+                SAP BAS 
+              </div>
+              <div class="sub-title">
+                S4HANA On premise Deployment
+              </div>
+              <p>
+                SAP Business Application Studio is an SAP Business Technology Platform service in the Cloud Foundry environment. 
+                It is built on open-source and leading industry standards and supports a modular approach to developing different kinds of apps.                 
+              </p>
+              <br>
+              <a href="https://vinci-energies.elium.com/tile/view/3955" target="_blank">
+                  <button>
+                    Read More
+                  </button>
+              </a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="img">
+              <img src="/img/improve.png" />
+          </div>
+          <div class="content">
+              <div class="title">
+                Improving your code
+              </div>
+              <div class="sub-title">
+                Double loop vs for group
+              </div>
+              <p>
+                Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? Is there any performance difference ? 
+                Well this article will try to show if there is any difference in performance for different types of iteration.
 
-              It is built on open-source and leading industry standards and supports a modular approach to developing different kinds of apps.
+              </p>
+              <br>
+              <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg" target="_blank">
+                  <button>
+                    Read More
+                  </button>
+              </a>
+          </div>
+      </div>
+      <div class="card">
+        <div class="img">
+            <img src="/img/js.png" />
+        </div>
+        <div class="content">
+            <div class="title">
+              Modern JavaScript 
+            </div>
+            <div class="sub-title">
+              Modern Syntax in SAPUI5
+            </div>
+            <p>
+              Present modern JavaScript syntax and features that can be applied in SAPUI5. The optional chaining (?.) operator accesses an object's property or calls a function. 
             </p>
+            <br>
+            <a href="https://vinci-energies.elium.com/tile/view/6112" target="_blank">
+                <button>
+                  Read More
+                </button>
+            </a>
         </div>
     </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/tile/view/6112">
-          <img src="/img/js.png">
-      </a>
-        <div class="info">
-            <h1>Modern JavaScript Syntax in SAPUI5</h1>
-            <p>Present modern JavaScript syntaxe and features that can be applied in SAPUI5.</p>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/téléchargement.jpg">
-      </a>
-        <div class="info">
-            <h1>Moi</h1>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/téléchargement.jpg">
-      </a>
-        <div class="info">
-            <h1>Moi</h1>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/téléchargement.jpg">
-      </a>
-        <div class="info">
-            <h1>Moi</h1>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/téléchargement.jpg">
-      </a>
-      <div class="info">
-          <h1>Moi</h1>
-      </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/téléchargement.jpg">
-      </a>
-      <div class="info">
-          <h1>Moi</h1>
-      </div>
-    </div>
-    <a onclick="next_slide()" id="next-slide" ></a>
-    <a onclick="prev_slide()" id="prev-slide" ></a>
   </div>
 </section>
 
-<section id="form-redirection" style="scroll-margin-block-start: 120px;"></section>
 <section id="contact" class="px-6 py-4 animate-on-scroll" style="margin-top: 3rem; scroll-margin-block-start: 120px; margin-bottom: 4rem">
   <div class="md:flex justify-center">
     <div class="text-3xl title-deco tracking-wide"> Contact Us </div>
@@ -452,12 +514,18 @@
   <br/>
   <div style="display:flex; justify-content: center;">
     <div class="mt-8" style="background-color: #1f293a; padding: 60px; border-radius: 10%;">
-    <form action="https://fabform.io/f/fhibea_" method="post"> <input
-        name="name" type="text" placeholder="Name"
-        style="all: unset; border-bottom: 1px solid white; margin-left: 5px; color: white;"> <br /> <br /> <input name="email"
-        type="email" required placeholder="Email" style="all:unset; color: white; border-bottom: 1px solid white; margin-left: 5px;"> <br /> <br />
+    <form action="https://fabform.io/f/devTeam" method="post" style="z-index : 10000;">
+       <input name="name" type="text" placeholder="Name" style="all: unset; border-bottom: 1px solid white; margin-left: 5px; color: white;"> 
+        <br /> 
+        <br /> 
+       <input name="email" type="email" required placeholder="Email" style="all:unset; color: white; border-bottom: 1px solid white; margin-left: 5px;"> 
+       <br /> 
+       <br />
       <textarea name="message" type="text" required placeholder="Message" style="all:unset; border-bottom: 1px solid white; color: white; margin-left: 5px; height: 120px; width: 180px;"></textarea>
-      <br/><br/><br/> <button type="submit" class="hover-btn">Send</button>
+      <br/>
+      <br/>
+      <br/> 
+      <button type="submit" class="hover-btn">Send</button>
     </form>
     </div>
   </div>

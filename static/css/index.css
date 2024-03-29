@@ -25,7 +25,7 @@ body{
     opacity .5s, visibility .5s;
   opacity: 0;
   visibility: hidden;
-  z-index: 1000;
+  z-index: 1;
 }
 #button::after {
   content: "\f077";
@@ -55,7 +55,7 @@ body{
   width: 100%;
   height: 100%;
   background-color: black;
-  z-index: 200;
+  z-index:2;
   color: white;
   text-align: center;
   line-height: 100%;
@@ -66,6 +66,7 @@ body{
   position: fixed;
   opacity:0;
   transition: all 1s;
+  z-index: 1;
 }
 
 @keyframes fadeIn {
@@ -117,7 +118,7 @@ div.MouseScroll {
   height: 10%;
   margin: 0 0 0 -5%;
 
-  z-index: 2;
+  z-index: 1;
 }
 
 @keyframes ChevronAnimation {
@@ -586,27 +587,24 @@ border-bottom: 25px solid transparent;
 
 
 #snackbar {
-  visibility: hidden; /* Hidden by default. Visible on click */
-  min-width: 200px; /* Set a default minimum width */
-  margin-left: -97px; /* Divide value of min-width by 2 */
-  background-color: #1f293a; /* Black background color */
-  color: white; /* White text color */
-  text-align: center; /* Centered text */
-  border-radius: 5%; /* Rounded borders */
+  visibility: hidden;
+  min-width: 200px; 
+  margin-left: -97px;
+  background-color: #1f293a; 
+  color: white; 
+  text-align: center;
+  border-radius: 5%;
   border-width: 3px;
   border-color: white;
-  padding: 16px; /* Padding */
-  position: fixed; /* Sit on top of the screen */
-  z-index: 1; /* Add a z-index if needed */
-  left: 50%; /* Center the snackbar */
-  bottom: 30px; /* 30px from the bottom */
+  padding: 16px;
+  position: fixed;
+  left: 50%; 
+  bottom: 30px; 
 }
 
-/* Show the snackbar when clicking on a button (class added with JavaScript) */
+
 #snackbar.show {
-  visibility: visible; /* Show the snackbar */
-  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
+  visibility: visible; 
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
@@ -632,101 +630,92 @@ border-bottom: 25px solid transparent;
   to {bottom: 0; opacity: 0;}
 }
 
+
+
 .slider-docu {
-  position: relative;
-  width: 100%;
-  height: 300px;
+  max-width: 200%;
+  height: 200%;
+  display: flex;
+  background: transparent;
+  color: black;
+}
+.slider-docu .card {
+  flex: 1;
+  margin: 0 3%;
+  border-radius: 3%;
+  overflow: hidden;
+  background-color: none;
+  height: 100%;
+  border-color: #1f293a;
+}
+
+.slider-docu .card .img {
+  height: 200px;
+  margin: 4%;
+  width: calc(100% - 7%);
+  border-radius: 3%;
   overflow: hidden;
 }
-.item {
-  position: absolute;
-  width: 35%;
-  height: 60%;
-  text-align: left;
-  background-color: black;
-  border-radius: 3%;
-  padding: 1%;
-  transition: 0.5s;
-  left: calc(50% - 17%);
-  top: 0;
-  overflow : hidden;
-  transition: 0.5s;
-  cursor: pointer;
-  margin-top: 5%;
+
+.slider-docu .card .img:hover {
+  filter: brightness(75%);
 }
 
-.item img {
-  width: 100%;
+.slider-docu .card .img img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
-  transition: 0.5s;
-  cursor: pointer;
 }
 
-.item .info {
-  position: absolute;
-  bottom: -50%;
-  padding: 3%;
-  transition: 0.5s bottom, 1.75s opacity;
-  opacity: 0;
-  color: black;
-  font-weight: bold;
-  margin-bottom: 20%;
-  margin-right: 5%;
+.slider-docu .card .img img:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.item button {
-  opacity : 0;
+.slider-docu .card .content {
+  padding: 10px 20px;
+}
+.card .content .title {
+  text-align: left;
+  font-size: 150%;
+  font-weight: 500;
+}
+.card .content .sub-title {
+  font-size: 100%;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
 }
 
-.info p {
-  font-size: 80%;
-  margin-top: 1%;
+.card .content p {
+  text-align: left;
+  margin: 2% 0;
+  line-height: 1.5;
+  max-height: 6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
-.item:hover,
-.item:hover img {
-  transform: scale(1.1);
-}
-
-.item:hover img {
-  filter: blur(4px);
-  -webkit-filter: blur(4px);
-}
-
-
-.item:hover > .info {
-  bottom: 0;
-  opacity: 1;
-}
-
-.item:hover > button {
-  opacity : 1
-}
-
-#next-slide, #prev-slide{
-  top: 40%;
-  width: 5%;
-  height: 10%;
+.card .content button {
+  background-color: #1f293a;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: white;
+  display: inline-block;
+  font-size: 100%;
+  font-weight: 500;
+  height: 20%;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
   text-align: center;
-  left: 1%;
-  position: absolute;
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 200%;
-  color: black;
-}
-
-#next-slide::after {
-  content: "\f054";
-}
-
-#prev-slide::after {
-  content: "\f053";
-}
-
-#next-slide{
-  left: unset;
-  right: 1%;
+  text-decoration: none;
+  vertical-align: baseline;
+  touch-action: manipulation;
+  bottom: 10px;
 }

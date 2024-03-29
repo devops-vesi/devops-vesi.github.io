@@ -9,6 +9,8 @@
 <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
@@ -146,49 +148,13 @@ function to_the_top() {
   $('html, body').animate({scrollTop:0}, '300');
 };
 
-let active = 3;
-
-function loadShow(items){
-    let stt = 0;
-    items[active].style.transform = `none`;
-    items[active].style.zIndex = 1;
-    items[active].style.filter = 'none';
-    items[active].style.opacity = 1;
-    for(var i = active + 1; i < items.length; i++){
-        console.log(items.length);
-        stt++;
-        items[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
-        items[i].style.zIndex = -stt;
-        items[i].style.filter = 'blur(5px)';
-        items[i].style.opacity = stt > 2 ? 0 : 0.6;
-    }
-    stt = 0;
-    for(var i = active - 1; i > 0; i--){
-        stt++;
-        items[i].style.transform = `translateX(${-120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(1deg)`;
-        items[i].style.zIndex = -stt;
-        items[i].style.filter = 'blur(5px)';
-        items[i].style.opacity = stt > 2 ? 0 : 0.6;
-    }
-}
-
-document.addEventListener('DOMContentLoaded',function() {
-    let items = document.querySelectorAll('.slider-docu, .item');
-    loadShow(items);
-  });
-
-function next_slide(){
-      let items = document.querySelectorAll('.slider-docu, .item');
-      console.log("next");
-      active = active + 1 < 9 ? active + 1 : active;
-      loadShow(items);
-  };
-
-  function prev_slide(){
-    active = active - 1 > 0 ? active - 1 : active;
-    let items = document.querySelectorAll('.slider-docu, .item');
-    loadShow(items);
-};
-
+$(document).ready(function() {
+      $(".slider-docu").owlCarousel({
+          loop: true,
+          autoplay: true,
+          autoplayTimeout: 3000, //2000ms = 2s;
+          autoplayHoverPause: true,
+      });
+    });
 
 </script>
