@@ -65,9 +65,10 @@
     }
 
     $(document).scroll(function () {
+      let scrollWin = (window.innerHeight- 10);
       var x = document.getElementById("logo");
 
-      if($(document).scrollTop()> $(document).height()*0.12){
+      if($(document).scrollTop()> scrollWin){
 
         $(x).attr({src: "/img/logoBleu.svg",});
 
@@ -76,10 +77,10 @@
         $(x).attr({src: "/img/logo.svg" ,});
       }
     });
-      
 
     $(document).on("scroll", function() {
-        if($(document).scrollTop() > $(document).height()*0.12) {
+      let scrollWin = (window.innerHeight- 10);
+        if($(document).scrollTop() > scrollWin) {
             $("#topnav_menu").css('color',"#1F293A")
            $(".topnav").css('background-color',"white")
         } else {
@@ -136,7 +137,7 @@ document.addEventListener('DOMContentLoaded',(e)=>{
 });
 
 $(window).on("scroll",function() {
-  if($(window).scrollTop() > 150) {
+  if($(window).scrollTop() > 300) {
     $('#button').addClass('show');
   } else {
     $('#button').removeClass('show');
@@ -154,7 +155,18 @@ $(document).ready(function() {
           autoplay: true,
           autoplayTimeout: 3000, //2000ms = 2s;
           autoplayHoverPause: true,
+          nav : true,
+          items: 3,
+          onInitialized : counter,
+          onChanged : counter,
       });
     });
 
+function counter(event) {
+  if (!event.namespace) {
+    return;
+  }
+  var slides = event.relatedTarget;
+  $('.slider-counter').text(slides.relative(slides.current()) + 1 + '/' + slides.items().length);
+}
 </script>

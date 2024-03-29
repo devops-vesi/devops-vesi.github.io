@@ -13,6 +13,8 @@
 <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
@@ -67,9 +69,10 @@
     }
 
     $(document).scroll(function () {
+      let scrollWin = (window.innerHeight- 10);
       var x = document.getElementById("logo");
 
-      if($(document).scrollTop()> $(document).height()*0.12){
+      if($(document).scrollTop()> scrollWin){
 
         $(x).attr({src: "/img/logoBleu.svg",});
 
@@ -78,10 +81,10 @@
         $(x).attr({src: "/img/logo.svg" ,});
       }
     });
-      
 
     $(document).on("scroll", function() {
-        if($(document).scrollTop() > $(document).height()*0.12) {
+      let scrollWin = (window.innerHeight- 10);
+        if($(document).scrollTop() > scrollWin) {
             $("#topnav_menu").css('color',"#1F293A")
            $(".topnav").css('background-color',"white")
         } else {
@@ -132,7 +135,7 @@ document.addEventListener('DOMContentLoaded',(e)=>{
 });
 
 $(window).on("scroll",function() {
-  if($(window).scrollTop() > 150) {
+  if($(window).scrollTop() > 300) {
     $('#button').addClass('show');
   } else {
     $('#button').removeClass('show');
@@ -144,57 +147,31 @@ function to_the_top() {
   $('html, body').animate({scrollTop:0}, '300');
 };
 
-let active = 3;
+$(document).ready(function() {
+      $(".slider-docu").owlCarousel({
+          loop: true,
+          autoplay: true,
+          autoplayTimeout: 3000, 
+          autoplayHoverPause: true,
+          nav : true,
+          items: 3,
+          onInitialized : counter,
+          onChanged : counter,
+      });
+    });
 
-function loadShow(items){
-    let stt = 0;
-    items[active].style.transform = `none`;
-    items[active].style.zIndex = 1;
-    items[active].style.filter = 'none';
-    items[active].style.opacity = 1;
-    for(var i = active + 1; i < items.length; i++){
-        console.log(items.length);
-        stt++;
-        items[i].style.transform = `translateX(${120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(-1deg)`;
-        items[i].style.zIndex = -stt;
-        items[i].style.filter = 'blur(5px)';
-        items[i].style.opacity = stt > 2 ? 0 : 0.6;
-    }
-    stt = 0;
-    for(var i = active - 1; i > 0; i--){
-        stt++;
-        items[i].style.transform = `translateX(${-120*stt}px) scale(${1 - 0.2*stt}) perspective(16px) rotateY(1deg)`;
-        items[i].style.zIndex = -stt;
-        items[i].style.filter = 'blur(5px)';
-        items[i].style.opacity = stt > 2 ? 0 : 0.6;
-    }
+function counter(event) {
+  if (!event.namespace) {
+    return;
+  }
+  var slides = event.relatedTarget;
+  $('.slider-counter').text(slides.relative(slides.current()) + 1 + '/' + slides.items().length);
 }
-
-document.addEventListener('DOMContentLoaded',function() {
-    let items = document.querySelectorAll('.slider-docu, .item');
-    loadShow(items);
-  });
-
-function next_slide(){
-      let items = document.querySelectorAll('.slider-docu, .item');
-      console.log("next");
-      active = active + 1 < 9 ? active + 1 : active;
-      loadShow(items);
-  };
-
-  function prev_slide(){
-    active = active - 1 > 0 ? active - 1 : active;
-    let items = document.querySelectorAll('.slider-docu, .item');
-    loadShow(items);
-};
-
-
 </script>
     <title>VESI DevOps Team</title>
   </head>
   <div class="splash">
     <img src="/img/logo.svg" class="fade-in" id="image">
-    <h1 class="fade-in" id="welcome">Welcome</h1>
   </div>
   <body>
       <a id="button" onclick="to_the_top()"></a>
@@ -365,7 +342,7 @@ function next_slide(){
         <div class="overflow-hidden">
           <div>
             <div class="font-bold text-xl mx-auto my-auto">
-              <div> <img src="/img/landscape/numbers/user.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+              <div> <img src="/img/landscape/numbers/user.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
                 <div class="text-center"> 44K+ </div>
               </div>
             </div>
@@ -375,7 +352,7 @@ function next_slide(){
         <div class="overflow-hidden">
           <div>
             <div class="font-bold text-xl mx-auto my-auto">
-              <div> <img src="/img/landscape/numbers/countries.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+              <div> <img src="/img/landscape/numbers/countries.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
                 <div class="text-center"> 21 </div>
               </div>
             </div>
@@ -385,7 +362,7 @@ function next_slide(){
         <div class="overflow-hidden">
           <div class="numbers-icons">
             <div class="font-bold text-xl mx-auto my-auto">
-              <div> <img src="/img/landscape/numbers/apps.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+              <div> <img src="/img/landscape/numbers/apps.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
                 <div class="text-center"> 131 </div>
               </div>
             </div>
@@ -395,7 +372,7 @@ function next_slide(){
         <div class="overflow-hidden">
           <div class="numbers-icons">
             <div class="font-bold text-xl mx-auto my-auto">
-              <div> <img src="/img/landscape/numbers/lines-of-code.png" width="50%" class="flex mx-auto my-auto numbers-width-responsive">
+              <div> <img src="/img/landscape/numbers/lines-of-code.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
                 <div class="text-center"> 7M+ </div>
               </div>
             </div>
@@ -488,7 +465,7 @@ function next_slide(){
   <br/>
   
   <div class="mt-8 grid grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/deployment.png" width="80px"
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/monde.png" width="20%"
         style="margin-top: 10px; margin-left: 20px;" /> </a>
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">SAP Deployments</div>
@@ -496,7 +473,7 @@ function next_slide(){
     </p>
       </div>
     </div>
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/enhancement.png" width="80px"
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/maintenance-web.png" width="20%"
         style="margin-top: 10px; margin-left: 20px;" /> </a>
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">Enhancements</div>
@@ -504,7 +481,7 @@ function next_slide(){
     </p>
       </div>
     </div>
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/upgrade.png" width="80px"
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/ameliorer.png" width="20%"
         style="margin-top: 10px; margin-left: 20px;" /> </a>
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">Upgrades</div>
@@ -512,7 +489,7 @@ function next_slide(){
     </p>
       </div>
     </div>
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/project.png" width="80px"
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/gestion-de-projet.png" width="20%"
         style="margin-top: 10px; margin-left: 20px;" /> </a>
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">Projects</div>
@@ -520,7 +497,7 @@ function next_slide(){
     </p>
       </div>
     </div>
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/iso.png" width="80px"
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/assurance-informatique.png" width="20%"
         style="margin-top: 10px; margin-left: 20px;" /> </a>
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">Quality &amp; Security</div>
@@ -528,7 +505,7 @@ function next_slide(){
     </p>
       </div>
     </div>
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/exploration.png" width="80px"
+    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/loupe.png" width="20%"
         style="margin-top: 10px; margin-left: 20px;" /> </a>
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">Exploration</div>
@@ -641,86 +618,152 @@ function next_slide(){
   </div> 
   <br>
   <br>
-  <br>
-  <div class="slider-docu">
-  <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/improve.png">
-      </a>
-        <div class="info">
-            <h1>Improving your code performance: double loop vs for group</h1>
-            <p> Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? 
-                Is there any performance difference ?
-            </p>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/tile/view/3955">
-          <img src="/img/BAS.png">
-      </a>
-        <div class="info">
-            <h1>SAP BAS : S4HANA On premise Deployment</h1>
-            <p>SAP Business Application Studio is an SAP Business Technology Platform service in the Cloud Foundry environment. 
-
-              It is built on open-source and leading industry standards and supports a modular approach to developing different kinds of apps.
-            </p>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/tile/view/6112">
-          <img src="/img/js.png">
-      </a>
-        <div class="info">
-            <h1>Modern JavaScript Syntax in SAPUI5</h1>
-            <p>Present modern JavaScript syntaxe and features that can be applied in SAPUI5.</p>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/téléchargement.jpg">
-      </a>
-        <div class="info">
-            <h1>Moi</h1>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/téléchargement.jpg">
-      </a>
-        <div class="info">
-            <h1>Moi</h1>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/téléchargement.jpg">
-      </a>
-        <div class="info">
-            <h1>Moi</h1>
-        </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/téléchargement.jpg">
-      </a>
-      <div class="info">
-          <h1>Moi</h1>
-      </div>
-    </div>
-    <div class="item">
-      <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg">
-          <img src="/img/téléchargement.jpg">
-      </a>
-      <div class="info">
-          <h1>Moi</h1>
-      </div>
-    </div>
-    <a onclick="next_slide()" id="next-slide" ></a>
-    <a onclick="prev_slide()" id="prev-slide" ></a>
+  <div>
+    <h1 class="slider-counter"></h1>
   </div>
+  <div class="slider-docu owl-carousel owl-nav owl-dot owl-page">
+      <div class="card">
+          <div class="img">
+              <img src="/img/zdev.png" />
+          </div>
+          <div class="content">
+              <div class="title">
+                  ZDEVTIMESHEET
+              </div>
+              <div class="sub-title">
+                  Entering timesheet
+              </div>
+              <p>
+                Timesheets are now entered using the ZDEVTIMESHEET transaction. 
+                The goal is to track the daily activity of each team member in order to justify to management the time spent on development and additional activities.
+              </p>
+              <br>
+              <a href="https://vinci-energies.elium.com/tile/view/4821/" target="_blank">
+                  <button>
+                      Read More
+                  </button>
+              </a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="img">
+              <img src="/img/cleaner.png" />
+          </div>
+          <div class="content">
+              <div class="title">
+                  ABAP cleaner
+              </div>
+              <div class="sub-title">
+                Installation of ABAP cleaner
+              </div>
+              <p>
+                ABAP Cleaner tool is a powerful and configurable tool for automating the refinement of ABAP code, establishing uniformity, 
+                minimizing errors, encouraging modernization, nurturing collaborative code ownership, and enhancing maintainability.
+              </p>
+              <br>
+              <a href="https://vinci-energies.elium.com/tile/view/6280/" target="_blank">
+                  <button>
+                    Read More
+                  </button>
+              </a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="img">
+              <img src="/img/SAT.png" />
+          </div>
+          <div class="content">
+              <div class="title">
+                SAT transaction
+              </div>
+              <div class="sub-title">
+                Do SAT traces on UI5 applications
+              </div>
+              <p>
+                The SAT transaction is an extremely useful tool for analyzing and optimizing the performance of SAP GUI transactions. 
+                However, performing a SAT Trace on an SAPUI5 application can be challenging since the SAT transaction does not support launching SAPUI5 applications directly. 
+              </p>
+              <br>
+              <a href="https://vinci-energies.elium.com/tile/view/6101/" target="_blank">
+                  <button>
+                    Read More
+                  </button>
+              </a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="img">
+              <img src="/img/BAS.png" />
+          </div>
+          <div class="content">
+              <div class="title">
+                SAP BAS 
+              </div>
+              <div class="sub-title">
+                S4HANA On premise Deployment
+              </div>
+              <p>
+                SAP Business Application Studio is an SAP Business Technology Platform service in the Cloud Foundry environment. 
+                It is built on open-source and leading industry standards and supports a modular approach to developing different kinds of apps.                 
+              </p>
+              <br>
+              <a href="https://vinci-energies.elium.com/tile/view/3955" target="_blank">
+                  <button>
+                    Read More
+                  </button>
+              </a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="img">
+              <img src="/img/improve.png" />
+          </div>
+          <div class="content">
+              <div class="title">
+                Improving your code
+              </div>
+              <div class="sub-title">
+                Double loop vs for group
+              </div>
+              <p>
+                Why bothering with the new syntax in abap? Is it really worth to use the new iteration commands? Is there any performance difference ? 
+                Well this article will try to show if there is any difference in performance for different types of iteration.
+
+              </p>
+              <br>
+              <a href="https://vinci-energies.elium.com/public/content/2niopJYpEI1sJoDmi0x1x-q-0Poa3iIf8fm1VngfuYg" target="_blank">
+                  <button>
+                    Read More
+                  </button>
+              </a>
+          </div>
+      </div>
+      <div class="card">
+        <div class="img">
+            <img src="/img/js.png" />
+        </div>
+        <div class="content">
+            <div class="title">
+              Modern JavaScript 
+            </div>
+            <div class="sub-title">
+              Modern Syntax in SAPUI5
+            </div>
+            <p>
+              Present modern JavaScript syntax and features that can be applied in SAPUI5. The optional chaining (?.) operator accesses an object's property or calls a function. 
+            </p>
+            <br>
+            <a href="https://vinci-energies.elium.com/tile/view/6112" target="_blank">
+                <button>
+                  Read More
+                </button>
+            </a>
+        </div>
+    </div>
+  </div>
+
 </section>
 
-<section id="form-redirection" style="scroll-margin-block-start: 120px;"></section>
 <section id="contact" class="px-6 py-4 animate-on-scroll" style="margin-top: 3rem; scroll-margin-block-start: 120px; margin-bottom: 4rem">
   <div class="md:flex justify-center">
     <div class="text-3xl title-deco tracking-wide"> Contact Us </div>
@@ -728,12 +771,18 @@ function next_slide(){
   <br/>
   <div style="display:flex; justify-content: center;">
     <div class="mt-8" style="background-color: #1f293a; padding: 60px; border-radius: 10%;">
-    <form action="https://fabform.io/f/fhibea_" method="post"> <input
-        name="name" type="text" placeholder="Name"
-        style="all: unset; border-bottom: 1px solid white; margin-left: 5px; color: white;"> <br /> <br /> <input name="email"
-        type="email" required placeholder="Email" style="all:unset; color: white; border-bottom: 1px solid white; margin-left: 5px;"> <br /> <br />
+    <form action="https://fabform.io/f/kUfA2r-" method="post">
+       <input name="name" type="text" placeholder="Name" style="all: unset; border-bottom: 1px solid white; margin-left: 5px; color: white;"> 
+        <br /> 
+        <br /> 
+       <input name="email" type="email" required placeholder="Email" style="all:unset; color: white; border-bottom: 1px solid white; margin-left: 5px;"> 
+       <br /> 
+       <br />
       <textarea name="message" type="text" required placeholder="Message" style="all:unset; border-bottom: 1px solid white; color: white; margin-left: 5px; height: 120px; width: 180px;"></textarea>
-      <br/><br/><br/> <button type="submit" class="hover-btn">Send</button>
+      <br/>
+      <br/>
+      <br/> 
+      <button type="submit" class="hover-btn">Send</button>
     </form>
     </div>
   </div>
@@ -744,7 +793,7 @@ function next_slide(){
 </main>
 </div>
 </body>
-      <footer class="mt-8 grid grid-flow-row grid-cols-2 gap-4">
+      <footer class="mt-8 grid grid-flow-row grid-cols-2 gap-4 animate-on-scroll">
     <div>
         <img src="/img/logodev.svg" class="content-footer" width="60%"/>
     </div>

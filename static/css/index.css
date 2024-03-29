@@ -1,4 +1,4 @@
-/* Carousel d'entrée dans le site */
+
 body{
   overflow: hidden;
 }
@@ -27,6 +27,7 @@ body{
   visibility: hidden;
   z-index: 1;
 }
+
 #button::after {
   content: "\f077";
   font-family: FontAwesome;
@@ -36,13 +37,16 @@ body{
   line-height: 50px;
   color: #fff;
 }
+
 #button:hover {
   cursor: pointer;
   background-color: #333;
 }
+
 #button:active {
   background-color: #555;
 }
+
 #button.show {
   opacity: 1;
   visibility: visible;
@@ -55,15 +59,13 @@ body{
   width: 100%;
   height: 100%;
   background-color: black;
-  z-index:2;
+  z-index:1;
   color: white;
   text-align: center;
-  line-height: 100%;
-  
 }
 
 .splash.display-none {
-  position: fixed;
+  position:absolute;
   opacity:0;
   transition: all 1s;
   z-index: 1;
@@ -78,7 +80,7 @@ body{
 
 .fade-in{
   opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
+  animation: fadeIn 2s ease-in forwards;
 }
 
 #image{
@@ -106,8 +108,6 @@ body{
   color: #ffffff;
   border-bottom: 0;
   background-color: #1f293a;
-  /*background: linear-gradient(0deg, white 0%, #1f293a 5%);*/
-  /*background: linear-gradient(0deg, white 0%, #1f293a 10%);*/
 }
 
 div.MouseScroll {
@@ -117,8 +117,6 @@ div.MouseScroll {
   width: 10%;
   height: 10%;
   margin: 0 0 0 -5%;
-
-  z-index: 1;
 }
 
 @keyframes ChevronAnimation {
@@ -156,7 +154,6 @@ transform: translateY(3px)
   }
 }
 
-/* Titre des sections */
 .title-deco {
   position: relative;
 }
@@ -170,8 +167,7 @@ transform: translateY(3px)
   bottom: 0px;
 }
 
-/*section SAP Landscapes*/
-/*css tab*/  
+
 .tab {
 display: none;
 padding: 20px 0 0;
@@ -241,9 +237,6 @@ label {
   }
 }
 
-/* section team members */
-/*Glissière image*/
-
 
 @keyframes scroll {
 0% {
@@ -268,7 +261,6 @@ content: "";
 height: 100px;
 position: absolute;
 width: 1px;
-z-index: 1;
 }
 
 .members::after {
@@ -312,9 +304,6 @@ overflow: hidden;
   }
 }
 
-/* Section team values*/
-
-/* slider */
 
 .value {
 position: relative;
@@ -340,7 +329,6 @@ margin-bottom: 5%;
 
 .value .prevNext {
 position: absolute;
-z-index: 1;
 top: 40%;
 width: 100%;
 height: 0;
@@ -469,12 +457,6 @@ border-bottom: 25px solid transparent;
   border: 3px solid #1f293a;
 }
 
-/* #TEST:hover {
-  background-color: white;
-  color: #1f293a;
-  border: 3px solid #1f293a;
-  font-weight: bolder;
-} */
 
 .sliderContainer {
   overflow: hidden;
@@ -609,7 +591,7 @@ border-bottom: 25px solid transparent;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-/* Animations to fade the snackbar in and out */
+
 @-webkit-keyframes fadein {
   from {bottom: 0; opacity: 0;}
   to {bottom: 30px; opacity: 1;}
@@ -718,4 +700,39 @@ border-bottom: 25px solid transparent;
   vertical-align: baseline;
   touch-action: manipulation;
   bottom: 10px;
+}
+
+#next-slide, #prev-slide{
+  top: 40%;
+  width: 5%;
+  height: 10%;
+  text-align: center;
+  left: 1%;
+  position: absolute;
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 200%;
+  color: black;
+}
+
+#next-slide::after {
+  content: "\f054";
+}
+
+#prev-slide::after {
+  content: "\f053";
+}
+
+#next-slide{
+  left: unset;
+  right: 1%;
+}
+
+.owl-nav span {
+  font-size: 300%;
+}
+
+.slider-counter{
+  left:90%;
 }
