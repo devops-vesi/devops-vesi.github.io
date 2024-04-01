@@ -69,33 +69,46 @@
     }
 
     $(document).scroll(function () {
-      let scrollWin = (window.innerHeight- 10);
       var x = document.getElementById("logo");
-
-      if($(document).scrollTop()> scrollWin){
-
-        $(x).attr({src: "/img/logoBleu.svg",});
-
-      } else {
-
-        $(x).attr({src: "/img/logo.svg" ,});
-      }
+      if (window.innerWidth > 1770) {
+        let scrollWin = (window.innerHeight + 30);
+        if ($(document).scrollTop()> scrollWin){
+            $(x).attr({src: "/img/logoBleu.svg",});
+        } else {
+            $(x).attr({src: "/img/logo.svg" ,});
+        }
+      } else { 
+        let scrollWin = (window.innerHeight - 10);
+        if ($(document).scrollTop()> scrollWin){
+          $(x).attr({src: "/img/logoBleu.svg",});
+        } else {
+          $(x).attr({src: "/img/logo.svg" ,});
+        }
+      }  
     });
 
     $(document).on("scroll", function() {
-      let scrollWin = (window.innerHeight- 10);
-        if($(document).scrollTop() > scrollWin) {
-            $("#topnav_menu").css('color',"#1F293A")
-           $(".topnav").css('background-color',"white")
-        } else {
-            
-           $("#topnav_menu").css('color',"white")
+      if (window.innerWidth > 1770 ){
+        let scrollWin = (window.innerHeight + 30);
+        if($(document).scrollTop() < scrollWin) {
+          $("#topnav_menu").css('color',"white")
           $(".topnav").css('background-color',"#1F293A")
+        } else {
+          $("#topnav_menu").css('color',"#1F293A")
+           $(".topnav").css('background-color',"white")
         }
+      } else {
+        let scrollWin = (window.innerHeight - 10);
+        if($(document).scrollTop() < scrollWin) {
+          $("#topnav_menu").css('color',"white")
+          $(".topnav").css('background-color',"#1F293A")
+        } else {
+          $("#topnav_menu").css('color',"#1F293A")
+           $(".topnav").css('background-color',"white")
+        }
+      }
+     
     });
-
-    
-
 
     (function () {
       "use strict"
@@ -149,24 +162,30 @@ function to_the_top() {
 
 $(document).ready(function() {
       $(".slider-docu").owlCarousel({
-          loop: true,
-          autoplay: true,
-          autoplayTimeout: 3000, 
-          autoplayHoverPause: true,
-          nav : true,
-          items: 3,
-          onInitialized : counter,
-          onChanged : counter,
+        loop: true,
+        center: true,
+        items: 3,
+        margin: 30,
+        autoplay: true,
+        dots:true,
+        nav:true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause:true,
+        stopOnHover:true,
+        smartSpeed: 850,
+          responsive: {
+          0: {
+            items: 1
+          },
+          768: {
+            items: 2
+          },
+          1170: {
+            items: 3
+          }
+        }
       });
     });
-
-function counter(event) {
-  if (!event.namespace) {
-    return;
-  }
-  var slides = event.relatedTarget;
-  $('.slider-counter').text(slides.relative(slides.current()) + 1 + '/' + slides.items().length);
-}
 </script>
     <title>VESI DevOps Team</title>
   </head>
@@ -618,9 +637,6 @@ function counter(event) {
   </div> 
   <br>
   <br>
-  <div>
-    <h1 class="slider-counter"></h1>
-  </div>
   <div class="slider-docu owl-carousel owl-nav owl-dot owl-page">
       <div class="card">
           <div class="img">
