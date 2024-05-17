@@ -139,13 +139,50 @@ animation: ChevronAnimation 3s ease infinite;
 transform: translateY(3px)
 }
 
+
 .animate-on-scroll {
   opacity: 0;
-  transition: opacity 3s;
+  transform: translateY(150px);
+  transition: opacity 3s, transform 1s;
 }
 
 .animate-on-scroll.is-visible {
   opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll-side {
+  opacity : 0;
+  transform: translateX(3%);
+  transition: opacity 5s, transform 1s;
+}
+
+.animate-on-scroll-side.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+.animate {
+  opacity: 0;
+  transform: translateY(150px);
+  transition: opacity 5s, transform 2s;
+}
+
+.animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-text {
+  opacity : 0;
+  transform: translateY(70px);
+  transition: opacity 5s, transform 2s;
+}
+
+.animate-text.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media screen and (max-width: 650px) {
@@ -753,7 +790,7 @@ border-bottom: 25px solid transparent;
 
 
 .owl-carousel .owl-next{
-  right: 97%;
+  right: 93%;
 }
 
 .owl-dots {

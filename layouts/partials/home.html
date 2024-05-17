@@ -2,8 +2,8 @@
 <div class="overflow-hidden">
   <div id="mainBG">
     <div class="centerAll main-image">
-      <div> <img src="/img/logodev.svg" width="600px" /> </div>
-      <div class="text text-xl text-center">
+      <div> <img class="animate" src="/img/logodev.svg" width="600px"/> </div>
+      <div class="text text-xl text-center animate-text">
         {{if $.Site.Params.maintext}}{{ $.Site.Params.maintext }}{{else}}Edit config.toml/params{{end}}
       </div>
     </div>
@@ -41,7 +41,7 @@
             </div>
           </div>
         </div>
-        <div class="overflow-hidden">
+        <div class="overflow-hidden animate-on-scroll-side">
           <div class="sliderContainer slider-position">
             <div class="slider" style="overflow: visible;">
               <div class="slide-track">
@@ -98,7 +98,7 @@
           </div>
         </div>
         </div>
-        <div class="lg:mt-10 mt-6">
+        <div class="lg:mt-10 mt-6 animate-on-scroll">
           <div class="text-2xl font-bold text-center">{{if $data.about.title1}}
             {{$data.about.title1}}
             {{else}}You can put text in data/home/about.toml/title1{{end}}
@@ -129,40 +129,40 @@
           <div>
             <div class="font-bold text-xl mx-auto my-auto">
               <div> <img src="/img/landscape/numbers/user.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
-                <div class="text-center"> 58K+ </div>
+                <div class="text-center num animate-on-scroll"> 58,000 </div>
               </div>
             </div>
-            <p class="text-center"> SAP Users </p>
+            <p class="text-center animate-on-scroll"> SAP Users </p>
           </div>
         </div>
         <div class="overflow-hidden">
           <div>
             <div class="font-bold text-xl mx-auto my-auto">
               <div> <img src="/img/landscape/numbers/countries.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
-                <div class="text-center"> 21 </div>
+                <div class="text-center num animate-on-scroll"> 21 </div>
               </div>
             </div>
-            <p class="text-center"> Countries </p>
+            <p class="text-center animate-on-scroll"> Countries </p>
           </div>
         </div>
         <div class="overflow-hidden">
           <div class="numbers-icons">
             <div class="font-bold text-xl mx-auto my-auto">
               <div> <img src="/img/landscape/numbers/apps.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
-                <div class="text-center"> 131 </div>
+                <div class="text-center num animate-on-scroll"> 131 </div>
               </div>
             </div>
-            <p class="text-center"> Fiori apps </p>
+            <p class="text-center animate-on-scroll"> Fiori apps </p>
           </div>
         </div>
         <div class="overflow-hidden">
           <div class="numbers-icons">
             <div class="font-bold text-xl mx-auto my-auto">
               <div> <img src="/img/landscape/numbers/lines-of-code.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
-                <div class="text-center"> 7M+ </div>
+                <div class="text-center num animate-on-scroll"> 7,000,000 </div>
               </div>
             </div>
-            <p class="text-center"> Lines of custom code </p>
+            <p class="text-center animate-on-scroll"> Lines of custom code </p>
           </div>
         </div>
         <div class="responsive_div"></div>
@@ -186,25 +186,25 @@
             On-Premise & Back
           </div>
           <!-- <a href="https://community.sap.com/topics/abap" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">ABAP</li>
+            <li id="TEST" class="animate-on-scroll-side">ABAP</li>
           <!-- </a> -->
           <!-- <a href="https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE?version=2020&locale=en-US" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">SAP S/4HANA 2020</li>
+            <li id="TEST" class="animate-on-scroll-side">SAP S/4HANA 2020</li>
           <!-- </a> -->
           <!-- <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">ABAP CDS</li>
+            <li id="TEST" class="animate-on-scroll-side">ABAP CDS</li>
           <!-- </a> -->
           <!-- <a href="https://blogs.sap.com/2020/11/24/introduction-to-odata-and-how-to-implement-them-in-abap/" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">ODATA</li>
+            <li id="TEST" class="animate-on-scroll-side">ODATA</li>
           <!-- </a> -->
           <!-- <a href="https://community.sap.com/topics/adobe-forms" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">ABAP Eclipse</li>
+            <li id="TEST" class="animate-on-scroll-side">ABAP Eclipse</li>
           <!-- </a> -->
           <!-- <a href="https://help.sap.com/docs/ABAP_DEVELOPMENT_TOOLS_FOR_ECLIPSE?locale=en-US" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">Adobe Forms</li>
+            <li id="TEST" class="animate-on-scroll-side">Adobe Forms</li>
           <!-- </a> -->
           <!-- <a href="https://docs.mulesoft.com/general/" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">Mulesoft</li>
+            <li id="TEST" class="animate-on-scroll-side">Mulesoft</li>
           <!-- </a> -->
         </ul>
       </div>
@@ -214,25 +214,25 @@
             Cloud & New Tech
           </div>
           <!-- <a href="https://sapui5.hana.ondemand.com/#/topic" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">SAPUI5</li>
+            <li id="TEST" class="animate-on-scroll-side">SAPUI5</li>
           <!-- </a> -->
           <!-- <a href="https://experience.sap.com/fiori-design/" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">Fiori</li>
+            <li id="TEST" class="animate-on-scroll-side">Fiori</li>
           <!-- </a> -->
           <!-- <a href="https://www.sap.com/products/technology-platform.html" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">SAP BTP</li>
+            <li id="TEST" class="animate-on-scroll-side">SAP BTP</li>
           <!-- </a> -->
           <!-- <a href="https://www.sap.com/products/technology-platform/business-application-studio.html" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">SAP BAS</li>
+            <li id="TEST" class="animate-on-scroll-side">SAP BAS</li>
           <!-- </a> -->
           <!-- <a href="https://docs.gitlab.com/" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">GitLab</li>
+            <li id="TEST" class="animate-on-scroll-side">GitLab</li>
           <!-- </a> -->
           <!-- <a href="https://docs.sonarsource.com/sonarqube/latest/" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">SonarQube</li>
+            <li id="TEST" class="animate-on-scroll-side">SonarQube</li>
           <!-- </a> -->
           <!-- <a href="https://www.atlassian.com/devops" style="cursor: auto;" target="_blank"> -->
-            <li id="TEST">DevOps</li>
+            <li id="TEST" class="animate-on-scroll-side">DevOps</li>
           <!-- </a> -->
         </ul>
       </div>

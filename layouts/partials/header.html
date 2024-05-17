@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
@@ -133,7 +135,90 @@
       window.addEventListener('scroll', detectAndAnimate);
       detectAndAnimate();
   })();
-  
+
+  (function () {
+      "use strict"
+      const animatedElements = new Set();
+        const detectAndAnimate = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll-side');
+            elements.forEach(element => {
+              if (!animatedElements.has(element)){
+                const isVisible = isElementInViewport(element);
+                if(isVisible) {
+                  element.classList.add('is-visible');
+                  animatedElements.add(element);
+                }
+              }
+                
+            });
+        };
+      const isElementInViewport = el => {
+          const rect = el.getBoundingClientRect();
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          return (
+            rect.bottom >= 0 &&
+            rect.top <= viewportHeight
+          );
+      };
+      window.addEventListener('scroll', detectAndAnimate);
+      detectAndAnimate();
+  })();
+
+  (function () {
+      "use strict"
+      const animatedElements = new Set();
+        const detectAndAnimate = () => {
+            const elements = document.querySelectorAll('.animate');
+            elements.forEach(element => {
+              if (!animatedElements.has(element)){
+                const isVisible = isElementInViewport(element);
+                if(isVisible) {
+                  setTimeout(() => { element.classList.add('is-visible'); }, 1000);
+                  animatedElements.add(element);
+                }
+              }
+            });
+        };
+      const isElementInViewport = el => {
+          const rect = el.getBoundingClientRect();
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          return (
+            rect.bottom >= 0 &&
+            rect.top <= viewportHeight
+          );
+      };
+      window.addEventListener('load', detectAndAnimate);
+      detectAndAnimate();
+  })();
+
+  (function () {
+      "use strict"
+      const animatedElements = new Set();
+        const detectAndAnimate = () => {
+            const elements = document.querySelectorAll('.animate-text');
+            elements.forEach(element => {
+              if (!animatedElements.has(element)){
+                const isVisible = isElementInViewport(element);
+                if(isVisible) {
+                  setTimeout(() => { element.classList.add('is-visible'); }, 2000);
+                  animatedElements.add(element);
+                }
+              }
+            });
+        };
+      const isElementInViewport = el => {
+          const rect = el.getBoundingClientRect();
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          return (
+            rect.bottom >= 0 &&
+            rect.top <= viewportHeight
+          );
+      };
+      window.addEventListener('load', detectAndAnimate);
+      detectAndAnimate();
+  })();
+
+
 document.addEventListener('DOMContentLoaded',(e)=>{
   const splash = document.querySelector(' .splash');
   setTimeout(()=>{
@@ -182,4 +267,10 @@ $(document).ready(function() {
         }
       });
     });
+
+    $(document).ready(function(){
+    $('.num').counterUp({
+      time: 1300
+    });
+  });
 </script>
