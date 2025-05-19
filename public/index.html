@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
@@ -137,7 +139,90 @@
       window.addEventListener('scroll', detectAndAnimate);
       detectAndAnimate();
   })();
-  
+
+  (function () {
+      "use strict"
+      const animatedElements = new Set();
+        const detectAndAnimate = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll-side');
+            elements.forEach(element => {
+              if (!animatedElements.has(element)){
+                const isVisible = isElementInViewport(element);
+                if(isVisible) {
+                  element.classList.add('is-visible');
+                  animatedElements.add(element);
+                }
+              }
+                
+            });
+        };
+      const isElementInViewport = el => {
+          const rect = el.getBoundingClientRect();
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          return (
+            rect.bottom >= 0 &&
+            rect.top <= viewportHeight
+          );
+      };
+      window.addEventListener('scroll', detectAndAnimate);
+      detectAndAnimate();
+  })();
+
+  (function () {
+      "use strict"
+      const animatedElements = new Set();
+        const detectAndAnimate = () => {
+            const elements = document.querySelectorAll('.animate');
+            elements.forEach(element => {
+              if (!animatedElements.has(element)){
+                const isVisible = isElementInViewport(element);
+                if(isVisible) {
+                  setTimeout(() => { element.classList.add('is-visible'); }, 1000);
+                  animatedElements.add(element);
+                }
+              }
+            });
+        };
+      const isElementInViewport = el => {
+          const rect = el.getBoundingClientRect();
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          return (
+            rect.bottom >= 0 &&
+            rect.top <= viewportHeight
+          );
+      };
+      window.addEventListener('load', detectAndAnimate);
+      detectAndAnimate();
+  })();
+
+  (function () {
+      "use strict"
+      const animatedElements = new Set();
+        const detectAndAnimate = () => {
+            const elements = document.querySelectorAll('.animate-text');
+            elements.forEach(element => {
+              if (!animatedElements.has(element)){
+                const isVisible = isElementInViewport(element);
+                if(isVisible) {
+                  setTimeout(() => { element.classList.add('is-visible'); }, 2000);
+                  animatedElements.add(element);
+                }
+              }
+            });
+        };
+      const isElementInViewport = el => {
+          const rect = el.getBoundingClientRect();
+          const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+          return (
+            rect.bottom >= 0 &&
+            rect.top <= viewportHeight
+          );
+      };
+      window.addEventListener('load', detectAndAnimate);
+      detectAndAnimate();
+  })();
+
+
 document.addEventListener('DOMContentLoaded',(e)=>{
   const splash = document.querySelector(' .splash');
   setTimeout(()=>{
@@ -186,6 +271,12 @@ $(document).ready(function() {
         }
       });
     });
+
+    $(document).ready(function(){
+    $('.num').counterUp({
+      time: 1300
+    });
+  });
 </script>
     <title>VESI DevOps Team</title>
   </head>
@@ -232,8 +323,8 @@ $(document).ready(function() {
 <div class="overflow-hidden">
   <div id="mainBG">
     <div class="centerAll main-image">
-      <div> <img src="/img/logodev.svg" width="600px" /> </div>
-      <div class="text text-xl text-center">
+      <div> <img class="animate" src="/img/logodev.svg" width="600px"/> </div>
+      <div class="text text-xl text-center animate-text">
         Think it, Build it, Run it !
       </div>
     </div>
@@ -274,7 +365,7 @@ $(document).ready(function() {
             </div>
           </div>
         </div>
-        <div class="overflow-hidden">
+        <div class="overflow-hidden animate-on-scroll-side">
           <div class="sliderContainer slider-position">
             <div class="slider" style="overflow: visible;">
               <div class="slide-track">
@@ -331,7 +422,7 @@ $(document).ready(function() {
           </div>
         </div>
         </div>
-        <div class="lg:mt-10 mt-6">
+        <div class="lg:mt-10 mt-6 animate-on-scroll">
           <div class="text-2xl font-bold text-center">
             The core mission behind all our work
             
@@ -362,40 +453,40 @@ $(document).ready(function() {
           <div>
             <div class="font-bold text-xl mx-auto my-auto">
               <div> <img src="/img/landscape/numbers/user.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
-                <div class="text-center"> 58K+ </div>
+                <div class="text-center num animate-on-scroll"> 65,000 </div>
               </div>
             </div>
-            <p class="text-center"> SAP Users </p>
+            <p class="text-center animate-on-scroll"> SAP Users </p>
           </div>
         </div>
         <div class="overflow-hidden">
           <div>
             <div class="font-bold text-xl mx-auto my-auto">
               <div> <img src="/img/landscape/numbers/countries.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
-                <div class="text-center"> 21 </div>
+                <div class="text-center num animate-on-scroll"> 21 </div>
               </div>
             </div>
-            <p class="text-center"> Countries </p>
+            <p class="text-center animate-on-scroll"> Countries </p>
           </div>
         </div>
         <div class="overflow-hidden">
           <div class="numbers-icons">
             <div class="font-bold text-xl mx-auto my-auto">
               <div> <img src="/img/landscape/numbers/apps.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
-                <div class="text-center"> 131 </div>
+                <div class="text-center num animate-on-scroll"> 135 </div>
               </div>
             </div>
-            <p class="text-center"> Fiori apps </p>
+            <p class="text-center animate-on-scroll"> Fiori apps </p>
           </div>
         </div>
         <div class="overflow-hidden">
           <div class="numbers-icons">
             <div class="font-bold text-xl mx-auto my-auto">
               <div> <img src="/img/landscape/numbers/lines-of-code.png" width="70%" class="flex mx-auto my-auto numbers-width-responsive">
-                <div class="text-center"> 7M+ </div>
+                <div class="text-center num animate-on-scroll"> 7,000,000 </div>
               </div>
             </div>
-            <p class="text-center"> Lines of custom code </p>
+            <p class="text-center animate-on-scroll"> Lines of custom code </p>
           </div>
         </div>
         <div class="responsive_div"></div>
@@ -412,32 +503,32 @@ $(document).ready(function() {
     <div class="md:flex justify-center">
       <div class="text-3xl title-deco tracking-wid "> SAP Landscape </div>
     </div>
-    <div class="container23 mt-10 grid grid-flow-row md:grid-cols-2 lg:grid-cols-2" style="column-gap: 8rem;">
+    <div class="container23 mt-10 grid grid-flow-row md:grid-cols-2 lg:grid-cols-2" style="column-gap: 8rem;margin-top: 10%;align-items: normal;">
       <div class="justify-center mt-4" style="display: grid; justify-content: right;">
         <ul>
           <div class="text-2xl font-bold text-center">
             On-Premise & Back
           </div>
           
-            <li id="TEST">ABAP</li>
+            <li id="TEST" class="animate-on-scroll-side">ABAP</li>
           
           
-            <li id="TEST">SAP S/4HANA 2020</li>
+            <li id="TEST" class="animate-on-scroll-side">SAP S/4HANA 2020</li>
           
           
-            <li id="TEST">ABAP CDS</li>
+            <li id="TEST" class="animate-on-scroll-side">ABAP CDS</li>
           
           
-            <li id="TEST">ODATA</li>
+            <li id="TEST" class="animate-on-scroll-side">ODATA</li>
           
           
-            <li id="TEST">ABAP Eclipse</li>
+            <li id="TEST" class="animate-on-scroll-side">ABAP Eclipse</li>
           
           
-            <li id="TEST">Adobe Forms</li>
+            <li id="TEST" class="animate-on-scroll-side">Adobe Forms</li>
           
           
-            <li id="TEST">Mulesoft</li>
+            <li id="TEST" class="animate-on-scroll-side">Mulesoft</li>
           
         </ul>
       </div>
@@ -447,142 +538,172 @@ $(document).ready(function() {
             Cloud & New Tech
           </div>
           
-            <li id="TEST">SAPUI5</li>
+            <li id="TEST" class="animate-on-scroll-side">SAPUI5</li>
           
           
-            <li id="TEST">Fiori</li>
+            <li id="TEST" class="animate-on-scroll-side">Fiori</li>
           
           
-            <li id="TEST">SAP BTP</li>
+            <li id="TEST" class="animate-on-scroll-side">SAP BTP</li>
           
           
-            <li id="TEST">SAP BAS</li>
+            <li id="TEST" class="animate-on-scroll-side">SAP BAS</li>
           
           
-            <li id="TEST">GitLab</li>
+            <li id="TEST" class="animate-on-scroll-side">GitLab</li>
           
           
-            <li id="TEST">SonarQube</li>
+            <li id="TEST" class="animate-on-scroll-side">SonarQube</li>
           
           
-            <li id="TEST">DevOps</li>
+            <li id="TEST" class="animate-on-scroll-side">DevOps</li>
           
+          <li id="TEST" class="animate-on-scroll-side">Visual Studio Code</li>
+          <li id="TEST" class="animate-on-scroll-side">Packmind</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
+    
 
 
 
-<section id="team" class="px-6 py-4 animate-on-scroll" style="margin-top: 4rem; scroll-margin-block-start: 120px">
-    <div class="md:flex justify-center"> <div class="text-3xl title-deco tracking-wide">
+    <section id="team" class="px-6 py-4 animate-on-scroll" style="margin-top: 4rem; scroll-margin-block-start: 120px;">
+  <div class="md:flex justify-center">
+    <div class="text-3xl title-deco tracking-wide">
   Team Activities
 </div>
- </div>
-  <br/>
-  
-  <div class="mt-8 grid grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/monde.png" width="20%"
-        style="margin-top: 10px; margin-left: 20px;" /> </a>
-      <div class="px-6 py-4 desc">
-        <div class="font-bold text-l mb-2">SAP Deployments</div>
-        <p class="text-gray-700 text-base">        Our Team works to execute the SAP Deployment in new Vinci Energies companies.
-    </p>
-      </div>
-    </div>
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/maintenance-web.png" width="20%"
-        style="margin-top: 10px; margin-left: 20px;" /> </a>
-      <div class="px-6 py-4 desc">
-        <div class="font-bold text-l mb-2">Enhancements</div>
-        <p class="text-gray-700 text-base">        Core model enhancements and maintenance.
-    </p>
-      </div>
-    </div>
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/ameliorer.png" width="20%"
-        style="margin-top: 10px; margin-left: 20px;" /> </a>
-      <div class="px-6 py-4 desc">
-        <div class="font-bold text-l mb-2">Upgrades</div>
-        <p class="text-gray-700 text-base">        SAP Landscape upgrades every 2 to 3 years.
-    </p>
-      </div>
-    </div>
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/gestion-de-projet.png" width="20%"
-        style="margin-top: 10px; margin-left: 20px;" /> </a>
-      <div class="px-6 py-4 desc">
-        <div class="font-bold text-l mb-2">Projects</div>
-        <p class="text-gray-700 text-base">        Various projects related to the SAP domain.
-    </p>
-      </div>
-    </div>
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/assurance-informatique.png" width="20%"
-        style="margin-top: 10px; margin-left: 20px;" /> </a>
-      <div class="px-6 py-4 desc">
-        <div class="font-bold text-l mb-2">Quality &amp; Security</div>
-        <p class="text-gray-700 text-base">        Compliance with the ISO 27001 standard and involvement in several topics related to the quality of the code.
-    </p>
-      </div>
-    </div>
-    <div class="w-full rounded overflow-hidden shadow-lg"> <img src="/img/team/activities/loupe.png" width="20%"
-        style="margin-top: 10px; margin-left: 20px;" /> </a>
-      <div class="px-6 py-4 desc">
-        <div class="font-bold text-l mb-2">Exploration</div>
-        <p class="text-gray-700 text-base">        Various explorations of new technologies and innovations.
-    </p>
-      </div>
-    </div>
+
   </div>
+  <br/>
+
+  
+    <div class="mt-8 grid grid-flow-row grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+      
+        <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+          <img src="/img/team/activities/monde.png" width="20%" style="margin-top: 20px; margin-left: 20px;" />  
+          <div class="px-6 py-4 desc">
+            <div class="font-bold text-l mb-2 text-black">SAP Deployments</div>
+            <p class="text-gray-700 text-base">        Our Team works to execute the SAP Deployment in new Vinci Energies companies.
+    </p>
+          </div>
+        </div>
+      
+        <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+          <img src="/img/team/activities/maintenance-web.png" width="20%" style="margin-top: 20px; margin-left: 20px;" />  
+          <div class="px-6 py-4 desc">
+            <div class="font-bold text-l mb-2 text-black">Enhancements</div>
+            <p class="text-gray-700 text-base">        Core model enhancements and maintenance.
+    </p>
+          </div>
+        </div>
+      
+        <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+          <img src="/img/team/activities/ameliorer.png" width="20%" style="margin-top: 20px; margin-left: 20px;" />  
+          <div class="px-6 py-4 desc">
+            <div class="font-bold text-l mb-2 text-black">Upgrades</div>
+            <p class="text-gray-700 text-base">        SAP Landscape upgrades every 2 to 3 years.
+    </p>
+          </div>
+        </div>
+      
+        <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+          <img src="/img/team/activities/gestion-de-projet.png" width="20%" style="margin-top: 20px; margin-left: 20px;" />  
+          <div class="px-6 py-4 desc">
+            <div class="font-bold text-l mb-2 text-black">Projects</div>
+            <p class="text-gray-700 text-base">        Various projects related to the SAP domain.
+    </p>
+          </div>
+        </div>
+      
+        <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+          <img src="/img/team/activities/assurance.png" width="20%" style="margin-top: 20px; margin-left: 20px;" />  
+          <div class="px-6 py-4 desc">
+            <div class="font-bold text-l mb-2 text-black">Quality &amp; Security</div>
+            <p class="text-gray-700 text-base">        Compliance with the ISO 27001 standard and involvement in several topics related to the quality of the code.
+    </p>
+          </div>
+        </div>
+      
+        <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+          <img src="/img/team/activities/loupe.png" width="20%" style="margin-top: 20px; margin-left: 20px;" />  
+          <div class="px-6 py-4 desc">
+            <div class="font-bold text-l mb-2 text-black">Exploration</div>
+            <p class="text-gray-700 text-base">        Various explorations of new technologies and innovations.
+    </p>
+          </div>
+        </div>
+      
+    </div>
+  
 </section>
-
-
-
-<section id="team" class="animate-on-scroll"  style="margin-top: 4rem; scroll-margin-block-start: 120px">
+<br/><br/>
+<section id="team" class="animate-on-scroll" style="margin-top: 4rem; scroll-margin-block-start: 120px">
   <div class="md:flex justify-center">
-    <div class="text-3xl title-deco tracking-wide"> <div class="text-3xl title-deco tracking-wide">
+    <div class="text-3xl title-deco tracking-wide">
+      <div class="text-3xl title-deco tracking-wide">
   Team Values
 </div>
- </div>
-  </div> <br/> <br/>
+
+    </div>
+  </div>
+  <br/><br/>
   <div class="value">
     <div class="slider2">
-      <div style="background-color: #1f293a;">
+      
+      <div style="background-color: #ffffff; box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.1), 0 4px 30px rgba(0, 0, 0, 0.1);" class="rounded-xl p-6">
         <div class="mt-4 grid grid-flow-row grid-cols-2 md:grid-cols-2 lg:grid-cols-6 gap-8">
-          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/commitment.png" />
+          
+          <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+            <img class="mx-auto my-auto values-logo" src="/img/team/values/lanalyse.png" />
             <div class="px-6 py-4">
-              <p class="text-white text-base">Commitment &amp; Result focused</p>
+              <p class="text-black text-base">Commitment &amp; Result focused</p>
             </div>
           </div>
-          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/elearning.png" />
+          
+          <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+            <img class="mx-auto my-auto values-logo" src="/img/team/values/ambition.png" />
             <div class="px-6 py-4">
-              <p class="text-white text-base">Ambition &amp; Initiatives</p>
+              <p class="text-black text-base">Ambition &amp; Initiatives</p>
             </div>
           </div>
-          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/sharing.png" />
+          
+          <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+            <img class="mx-auto my-auto values-logo" src="/img/team/values/innovation.png" />
             <div class="px-6 py-4">
-              <p class="text-white text-base">Innovation &amp; Sharing</p>
+              <p class="text-black text-base">Innovation &amp; Sharing</p>
             </div>
           </div>
-          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/trust.png" />
+          
+          <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+            <img class="mx-auto my-auto values-logo" src="/img/team/values/confiance.png" />
             <div class="px-6 py-4">
-              <p class="text-white text-base">Autonomy &amp; Trust</p>
+              <p class="text-black text-base">Autonomy &amp; Trust</p>
             </div>
           </div>
-          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/disabilities.png" />
+          
+          <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+            <img class="mx-auto my-auto values-logo" src="/img/team/values/emploi.png" />
             <div class="px-6 py-4">
-              <p class="text-white text-base">Involved in disabilities issues</p>
+              <p class="text-black text-base">Involved in disabilities issues</p>
             </div>
           </div>
-          <div class="w-full rounded overflow-hidden"> <img class="mx-auto my-auto values-logo" src="/img/team/values/team.png" />
+          
+          <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+            <img class="mx-auto my-auto values-logo" src="/img/team/values/travail-en-equipe.png" />
             <div class="px-6 py-4">
-              <p class="text-white text-base">Team working</p>
+              <p class="text-black text-base">Team working</p>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
   </div>
 </section>
+<br/><br/>
 
 
 
@@ -595,28 +716,28 @@ $(document).ready(function() {
   </div> <br />
   <div class="mt-8 grid grid-flow-row grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
     
-    <div class="w-full rounded overflow-hidden shadow-lg">
+    <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
       <img class="py-1 px-3" src="/img/team/certifications/sap.png" width="130px" style="margin-top: 10px; margin-left: 5px;" />
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">SAP Certifications</div>
         <p class="text-gray-700 text-base">Multiple technical SAP certifications in the team : more than 50% of team members are SAP certified.</p>
       </div>
     </div>
-    <div class="w-full rounded overflow-hidden shadow-lg">
+    <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
       <img class="py-1 px-3" src="/img/team/certifications/iso.png" width="130px" style="margin-top: 10px; margin-left: 5px;" />
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">ISO 27001</div>
         <p class="text-gray-700 text-base">ISO 27001 is an international standard for information systems security. Security is a top priority for our team, and we ensure that our development process is secure.</p>
       </div>
     </div>
-    <div class="w-full rounded overflow-hidden shadow-lg">
+    <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
       <img class="py-1 px-3" src="/img/team/certifications/clean-code.png" width="130px" style="margin-top: 10px; margin-left: 5px;" />
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">Technical Excellence Coaching</div>
         <p class="text-gray-700 text-base">Coaching by SAP Champion followed by some members of the team to introduce the concept of Technical Excellence in our work perimeter.</p>
       </div>
     </div>
-    <div class="w-full rounded overflow-hidden shadow-lg">
+    <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
       <img class="py-1 px-3" src="/img/team/certifications/SIT-label-level2.png" width="130px" style="margin-top: 10px; margin-left: 5px;" />
       <div class="px-6 py-4 desc">
         <div class="font-bold text-l mb-2">Sustainable IT - Level 2</div>
@@ -625,9 +746,132 @@ $(document).ready(function() {
     </div>
   </div>
 </section>
+<br/><br/>
+<br/><br/>
+<br/><br/>
+<section id="team" class="px-6 py-4 animate-on-scroll" style="scroll-margin-block-start: 120px">
+  <div class="md:flex justify-center">
+    <div class="text-3xl title-deco tracking-wide"> <div class="text-3xl title-deco tracking-wide">
+  We Were Here
+</div>
+ </div>
+  </div> <br />
+  
+  
+  <div class="mt-8 grid grid-flow-row grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    
+    
+    
+    <a href="https://community.sap.com/t5/paris/gh-p/paris" class="w-full rounded-xl overflow-hidden bg-white shadow-xl ">
+      <div class="py-4 px-3 flex flex-col items-center">
+        <img src="/img/team/We_Were_Here/SAP.png" width="50%" style="margin-top: 15px; margin-left: 5px;" />
+      </div>
+      <div class="px-6 py-4 desc flex flex-col items-center pb-6"> 
+        <div class="font-bold text-l mb-2">SAP Community Meetup</div>
+        <p class="text-gray-700 text-base">This meetup allows SAP experts to share ideas and explore digital innovations.</p>
+      </div>
+    </a>
+    
+    
+    
+    
+    <a href="https://www.fioriconf.org" class="w-full rounded-xl overflow-hidden bg-white shadow-xl ">
+      <div class="py-4 px-3 flex flex-col items-center">
+        <img src="/img/team/We_Were_Here/A.png" width="50%" style="margin-top: 15px; margin-left: 5px;" />
+      </div>
+      <div class="px-6 py-4 desc flex flex-col items-center pb-6"> 
+        <div class="font-bold text-l mb-2">Fiori Conf</div>
+        <p class="text-gray-700 text-base">Conference dedicated to Fiori: design, UX, and modern SAP best practices.</p>
+      </div>
+    </a>
+    
+    
+    
+    
+    <a href="https://abapconf.org" class="w-full rounded-xl overflow-hidden bg-white shadow-xl ">
+      <div class="py-4 px-3 flex flex-col items-center">
+        <img src="/img/team/We_Were_Here/ami.png" width="50%" style="margin-top: 15px; margin-left: 5px;" />
+      </div>
+      <div class="px-6 py-4 desc flex flex-col items-center pb-6"> 
+        <div class="font-bold text-l mb-2">ABAP Conf</div>
+        <p class="text-gray-700 text-base">Exploration of new features and tips related to the ABAP language for SAP developers.</p>
+      </div>
+    </a>
+    
+    
+    
+    
+    <a href="https://sapinsider.org" class="w-full rounded-xl overflow-hidden bg-white shadow-xl ">
+      <div class="py-4 px-3 flex flex-col items-center">
+        <img src="/img/team/We_Were_Here/g.png" width="50%" style="margin-top: 15px; margin-left: 5px;" />
+      </div>
+      <div class="px-6 py-4 desc flex flex-col items-center pb-6"> 
+        <div class="font-bold text-l mb-2">SAPinsider</div>
+        <p class="text-gray-700 text-base">Participation in the SAP Inside event to discuss the latest innovations</p>
+      </div>
+    </a>
+    
+    
+  </div>
+  
+</section>
 
-<br>
-<br>
+
+<br/><br/>
+<br/><br/>
+
+
+
+<section id="team" class="px-6 py-4 animate-on-scroll" style="margin-top: 4rem; scroll-margin-block-start: 120px;">
+  <div class="md:flex justify-center">
+    <div class="text-3xl title-deco tracking-wide">
+  VESI For All
+</div>
+
+     </div>
+  <br/>
+
+  
+   <div class="mt-8 grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      
+         
+          <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+            <img src="/img/team/Vesi%20for%20all/malvoyant.png" width="20%" style="margin-top: 20px; margin-left: 20px;" />
+            <div class="px-6 py-4 desc">
+              <div class="font-bold text-l mb-2 text-black">Make reading easier</div>
+              <p class="text-gray-700 text-base">We implement features adapted for the visually impaired to offer smooth and accessible navigation.</p>
+            </div>
+          </div>
+        
+      
+         
+          <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+            <img src="/img/team/Vesi%20for%20all/malentendant.png" width="20%" style="margin-top: 20px; margin-left: 20px;" />
+            <div class="px-6 py-4 desc">
+              <div class="font-bold text-l mb-2 text-black">Content adapted for the hearing impaired</div>
+              <p class="text-gray-700 text-base">We integrate solutions tailored for the hearing impaired to ensure a clear, understandable, and inclusive experience on our website.</p>
+            </div>
+          </div>
+        
+      
+         
+          <div class="w-full rounded-xl overflow-hidden bg-white shadow-xl">
+            <img src="/img/team/Vesi%20for%20all/note.png" width="20%" style="margin-top: 20px; margin-left: 20px;" />
+            <div class="px-6 py-4 desc">
+              <div class="font-bold text-l mb-2 text-black">Disability commitment</div>
+              <p class="text-gray-700 text-base">VESI assesses the accessibility of its website using a Nutri-Score-inspired rating system. The goal: to achieve an A across all sites to ensure accessible navigation.</p>
+            </div>
+          </div>
+        
+      
+    </div>
+  
+</section>
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+
 <section id="team" class="px-6 py-4 animate-on-scroll" style="scroll-margin-block-start: 120px">
   <div class="md:flex justify-center">
     <div class="text-3xl title-deco tracking-wide"> <div class="text-3xl title-deco tracking-wide">
@@ -756,7 +1000,8 @@ $(document).ready(function() {
   </div>
 
 </section>
-
+<br/><br/>
+<br/><br/>  
 <section id="contact" class="px-6 py-4 animate-on-scroll" style="margin-top: 3rem; scroll-margin-block-start: 120px; margin-bottom: 4rem">
   <div class="md:flex justify-center">
     <div class="text-3xl title-deco tracking-wide"> Contact Us </div>
@@ -786,7 +1031,7 @@ $(document).ready(function() {
 </main>
 </div>
 </body>
-      <footer class="mt-8 grid grid-flow-row grid-cols-2 gap-4 animate-on-scroll">
+      <footer class="mt-8 grid grid-flow-row grid-cols-2 gap-4">
     <div>
         <img src="/img/logodev.svg" class="content-footer" width="60%"/>
     </div>
