@@ -28,7 +28,7 @@
 
 [[activities]]
     title = "Quality & Security"
-    image = "/img/team/activities/assurance-informatique.png"
+    image = "/img/team/activities/assurance.png"
     text = """
         Compliance with the ISO 27001 standard and involvement in several topics related to the quality of the code.
     """
@@ -41,27 +41,27 @@
     """
 
 [[values]]
-    image = "/img/team/values/commitment.png"
+    image = "/img/team/values/lanalyse.png"
     text = "Commitment & Result focused"
 
 [[values]]
-    image = "/img/team/values/elearning.png"
+    image = "/img/team/values/ambition.png"
     text = "Ambition & Initiatives"
 
 [[values]]
-    image = "/img/team/values/sharing.png"
+    image = "/img/team/values/innovation.png"
     text = "Innovation & Sharing"
 
 [[values]]
-    image = "/img/team/values/trust.png"
+    image = "/img/team/values/confiance.png"
     text = "Autonomy & Trust"
 
 [[values]]
-    image = "/img/team/values/disabilities.png"
+    image = "/img/team/values/emploi.png"
     text = "Involved in disabilities issues"
 
 [[values]]
-    image = "/img/team/values/team.png"
+    image = "/img/team/values/travail-en-equipe.png"
     text = "Team working"
 
 [[certification]]
@@ -84,6 +84,45 @@
     title = "Sustainable IT - Level 2"
     text = "This label validates our commitment to a more responsible use of digital technology, and our respect for accessibility standards."
 
+[[We_Were_Here]]
+  image = "/img/team/We_Were_Here/SAP.png"
+  title = "SAP Community Meetup"
+  text = "This meetup allows SAP experts to share ideas and explore digital innovations."
+  link =  "https://community.sap.com/t5/paris/gh-p/paris"
+
+
+[[We_Were_Here]]
+  image = "/img/team/We_Were_Here/A.png"
+  title = "Fiori Conf"
+  text = "Conference dedicated to Fiori: design, UX, and modern SAP best practices."
+  link = "https://www.fioriconf.org"
+
+[[We_Were_Here]]
+  image = "/img/team/We_Were_Here/ami.png"
+  title = "ABAP Conf"
+  text = "Exploration of new features and tips related to the ABAP language for SAP developers."
+  link = "https://abapconf.org"
+
+
+[[We_Were_Here]]
+  image = "/img/team/We_Were_Here/g.png"
+  title = "SAPinsider"
+  text = "Participation in the SAP Inside event to discuss the latest innovations"
+  link = "https://sapinsider.org"
+   
+
+[[Vesi_for_all]]
+    image = "/img/team/Vesi for all/malvoyant.png"
+    title = "Make reading easier"
+    text = "We implement features adapted for the visually impaired to offer smooth and accessible navigation."
+[[Vesi_for_all]]
+    image = "/img/team/Vesi for all/malentendant.png"
+    title = "Content adapted for the hearing impaired"
+    text = "We integrate solutions tailored for the hearing impaired to ensure a clear, understandable, and inclusive experience on our website."
+[[Vesi_for_all]]
+    image = "/img/team/Vesi for all/note.png"
+    title = "Disability commitment"
+    text =  "VESI assesses the accessibility of its website using a Nutri-Score-inspired rating system. The goal: to achieve an A across all sites to ensure accessible navigation."
 
 [[documentation]]
     image = ""

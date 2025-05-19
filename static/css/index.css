@@ -526,7 +526,6 @@ border-bottom: 25px solid transparent;
   background: white;
   height: 150px;
   overflow: hidden;
-  position: relative;
   width: inherit;
   display: flex;
 }
@@ -543,26 +542,11 @@ border-bottom: 25px solid transparent;
   }
 }
 
-.slider::before,
-.slider::after {
-  background: linear-gradient(to right, rgb(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-  content: "";
-  height: 150px;
-  position: absolute;
-  width: 50px;
-  z-index: 2;
-}
 
-.slider::after {
-  right: 0;
-  top: 0;
-  transform: rotateZ(180deg);
-}
 
-.slider::before {
-  left: 0;
-  top: 0;
-}
+
+
+
 
 .slider .slide-track {
   -webkit-animation: scroll 20s linear infinite;
@@ -814,3 +798,37 @@ border-bottom: 25px solid transparent;
   outline: none;
 }
 
+
+
+
+
+
+
+
+
+/* Style pour le lien <a> pour qu'il devienne un conteneur Flexbox */
+.grid-cols-2 > a,
+.md\:grid-cols-2 > a,
+.lg\:grid-cols-4 > a {
+  display: flex;
+  flex-direction: column; /* Aligne les enfants verticalement */
+  height: 100%; /* Assure que le lien occupe toute la hauteur de la grille */
+}
+
+.py-4.px-3.flex.flex-col.items-center {
+  /* On retire le padding-top ici pour un meilleur contrôle global */
+  flex-grow: 1; /* Permet à la div de grandir */
+  justify-content: center; /* Centre l'image verticalement */
+}
+
+.px-6.py-4.desc.flex.flex-col.items-center.pb-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligne le contenu (titre et texte) vers le bas */
+  padding-bottom: 15px; /* Petit espace en bas */
+  /* On retire le padding-top ici pour un meilleur contrôle global */
+}
+
+.px-6.py-4.desc.flex.flex-col.items-center.pb-6 .font-bold {
+  margin-bottom: 0.5rem; /* Espace entre titre et texte */
+}
